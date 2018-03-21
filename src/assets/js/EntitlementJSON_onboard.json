@@ -1,0 +1,27 @@
+{
+	"ONBOARDING_ENTITLEMENT": {
+		"onboardingEntitlementVO": {
+			"amGraphAccess": 1,
+			"dmsGraphAccess": 1,
+			"webEnrollgraphAccess": 1,
+			"onboardingAllAccess": 0,
+			"kycGraphAccess": 1,
+			"cssGraphAccess": 1,
+			"aoGraphAccesss": 1
+		},
+		"onBoardingUserVO": {
+			"lastName": "JACK",
+			"lUserName": "JACK, ROHIT",
+			"profileId": "ONBOARD_USER",
+			"sCurrentDate": "Sunday, March 11, 2018",
+			"soeId": "RV88947",
+			"firstName": "ROHIT"
+		},
+		"AssessSpecify":[{
+			"DashBoardName":"SettlementDashboard",
+			"DisplayValue":1},
+		   
+		   { "DashBoardName":"OnboardingDashboard",
+			"DisplayValue":1}]
+	}
+}

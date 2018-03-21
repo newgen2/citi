@@ -1,0 +1,536 @@
+{
+  "RESPONSE_CODE": 1,
+  "RESPONSE_MESSAGE": "",
+  "RESPONSE_DATA": [
+    {
+      "REGION": 1,
+      "FREQUENCY": [
+        {
+          "NAME": 1,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "REGION_ID": 1,
+                  "FREQUENCY_ID": 1,
+                  "MEMBER_TYPE": "I",
+                  "MAINT_CURR_PRD_COUNT": 15,
+                  "MAINT_PREV_PRD_COUNT": 13,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 10,
+                  "BANK_PREV_PRD_COUNT": 4,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 1,
+                  "TITLE_PREV_PRD_COUNT": 2,
+                  "TITLE_CURR_PRD_SUM": 2,
+                  "TITLE_PREV_PRD_SUM": 2,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 47,
+                  "ADDRESS_PREV_PRD_COUNT": 16,
+                  "ADDRESS_CURR_PRD_SUM": 146,
+                  "ADDRESS_PREV_PRD_SUM": 39,
+                  "YTD": 61032
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "REGION_ID": 1,
+                  "FREQUENCY_ID": 1,
+                  "MEMBER_TYPE": "E",
+                  "MAINT_CURR_PRD_COUNT": 1,
+                  "MAINT_PREV_PRD_COUNT": 0,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 0,
+                  "BANK_PREV_PRD_COUNT": 0,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 0,
+                  "TITLE_PREV_PRD_COUNT": 0,
+                  "TITLE_CURR_PRD_SUM": 0,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 1,
+                  "ADDRESS_PREV_PRD_COUNT": 13,
+                  "ADDRESS_CURR_PRD_SUM": 1,
+                  "ADDRESS_PREV_PRD_SUM": 15,
+                  "YTD": 11871
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 2,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "REGION_ID": 1,
+                  "FREQUENCY_ID": 2,
+                  "MEMBER_TYPE": "I",
+                  "MAINT_CURR_PRD_COUNT": 126,
+                  "MAINT_PREV_PRD_COUNT": 122,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 207,
+                  "BANK_PREV_PRD_COUNT": 924,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 6,
+                  "TITLE_PREV_PRD_COUNT": 12,
+                  "TITLE_CURR_PRD_SUM": 5,
+                  "TITLE_PREV_PRD_SUM": 21,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 129,
+                  "ADDRESS_PREV_PRD_COUNT": 97,
+                  "ADDRESS_CURR_PRD_SUM": 407,
+                  "ADDRESS_PREV_PRD_SUM": 320,
+                  "YTD": 61032
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "REGION_ID": 1,
+                  "FREQUENCY_ID": 2,
+                  "MEMBER_TYPE": "E",
+                  "MAINT_CURR_PRD_COUNT": 4,
+                  "MAINT_PREV_PRD_COUNT": 6,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 8,
+                  "BANK_PREV_PRD_COUNT": 100,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 0,
+                  "TITLE_PREV_PRD_COUNT": 0,
+                  "TITLE_CURR_PRD_SUM": 0,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 32,
+                  "ADDRESS_PREV_PRD_COUNT": 9,
+                  "ADDRESS_CURR_PRD_SUM": 34,
+                  "ADDRESS_PREV_PRD_SUM": 19,
+                  "YTD": 11871
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 4,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "REGION_ID": 1,
+                  "FREQUENCY_ID": 4,
+                  "MEMBER_TYPE": "I",
+                  "MAINT_CURR_PRD_COUNT": 14412,
+                  "MAINT_PREV_PRD_COUNT": 0,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 15102,
+                  "BANK_PREV_PRD_COUNT": 0,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 753,
+                  "TITLE_PREV_PRD_COUNT": 0,
+                  "TITLE_CURR_PRD_SUM": 1441,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 6395,
+                  "ADDRESS_PREV_PRD_COUNT": 0,
+                  "ADDRESS_CURR_PRD_SUM": 22929,
+                  "ADDRESS_PREV_PRD_SUM": 0,
+                  "YTD": 61032
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "REGION_ID": 1,
+                  "FREQUENCY_ID": 4,
+                  "MEMBER_TYPE": "E",
+                  "MAINT_CURR_PRD_COUNT": 5587,
+                  "MAINT_PREV_PRD_COUNT": 0,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 923,
+                  "BANK_PREV_PRD_COUNT": 0,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 17,
+                  "TITLE_PREV_PRD_COUNT": 0,
+                  "TITLE_CURR_PRD_SUM": 63,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 725,
+                  "ADDRESS_PREV_PRD_COUNT": 0,
+                  "ADDRESS_CURR_PRD_SUM": 4556,
+                  "ADDRESS_PREV_PRD_SUM": 0,
+                  "YTD": 11871
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 3,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "REGION_ID": 1,
+                  "FREQUENCY_ID": 3,
+                  "MEMBER_TYPE": "I",
+                  "MAINT_CURR_PRD_COUNT": 775,
+                  "MAINT_PREV_PRD_COUNT": 922,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 1705,
+                  "BANK_PREV_PRD_COUNT": 1572,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 59,
+                  "TITLE_PREV_PRD_COUNT": 73,
+                  "TITLE_CURR_PRD_SUM": 91,
+                  "TITLE_PREV_PRD_SUM": 138,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 450,
+                  "ADDRESS_PREV_PRD_COUNT": 583,
+                  "ADDRESS_CURR_PRD_SUM": 1510,
+                  "ADDRESS_PREV_PRD_SUM": 2077,
+                  "YTD": 61032
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "REGION_ID": 1,
+                  "FREQUENCY_ID": 3,
+                  "MEMBER_TYPE": "E",
+                  "MAINT_CURR_PRD_COUNT": 361,
+                  "MAINT_PREV_PRD_COUNT": 292,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 218,
+                  "BANK_PREV_PRD_COUNT": 36,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 1,
+                  "TITLE_PREV_PRD_COUNT": 3,
+                  "TITLE_CURR_PRD_SUM": 0,
+                  "TITLE_PREV_PRD_SUM": 4,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 64,
+                  "ADDRESS_PREV_PRD_COUNT": 39,
+                  "ADDRESS_CURR_PRD_SUM": 112,
+                  "ADDRESS_PREV_PRD_SUM": 121,
+                  "YTD": 11871
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "REGION": 2,
+      "FREQUENCY": [
+        {
+          "NAME": 1,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "REGION_ID": 2,
+                  "FREQUENCY_ID": 1,
+                  "MEMBER_TYPE": "I",
+                  "MAINT_CURR_PRD_COUNT": 85,
+                  "MAINT_PREV_PRD_COUNT": 54,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 7,
+                  "BANK_PREV_PRD_COUNT": 4,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 1,
+                  "TITLE_PREV_PRD_COUNT": 0,
+                  "TITLE_CURR_PRD_SUM": 0,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 5,
+                  "ADDRESS_PREV_PRD_COUNT": 5,
+                  "ADDRESS_CURR_PRD_SUM": 32,
+                  "ADDRESS_PREV_PRD_SUM": 23,
+                  "YTD": 45257
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "REGION_ID": 2,
+                  "FREQUENCY_ID": 1,
+                  "MEMBER_TYPE": "E",
+                  "MAINT_CURR_PRD_COUNT": 0,
+                  "MAINT_PREV_PRD_COUNT": 0,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 0,
+                  "BANK_PREV_PRD_COUNT": 0,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 0,
+                  "TITLE_PREV_PRD_COUNT": 0,
+                  "TITLE_CURR_PRD_SUM": 0,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 1,
+                  "ADDRESS_PREV_PRD_COUNT": 0,
+                  "ADDRESS_CURR_PRD_SUM": 6,
+                  "ADDRESS_PREV_PRD_SUM": 0,
+                  "YTD": 651
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 2,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "REGION_ID": 2,
+                  "FREQUENCY_ID": 2,
+                  "MEMBER_TYPE": "I",
+                  "MAINT_CURR_PRD_COUNT": 285,
+                  "MAINT_PREV_PRD_COUNT": 250,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 29,
+                  "BANK_PREV_PRD_COUNT": 72,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 9,
+                  "TITLE_PREV_PRD_COUNT": 4,
+                  "TITLE_CURR_PRD_SUM": 21,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 27,
+                  "ADDRESS_PREV_PRD_COUNT": 87,
+                  "ADDRESS_CURR_PRD_SUM": 141,
+                  "ADDRESS_PREV_PRD_SUM": 300,
+                  "YTD": 45257
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "REGION_ID": 2,
+                  "FREQUENCY_ID": 2,
+                  "MEMBER_TYPE": "E",
+                  "MAINT_CURR_PRD_COUNT": 0,
+                  "MAINT_PREV_PRD_COUNT": 0,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 0,
+                  "BANK_PREV_PRD_COUNT": 1,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 0,
+                  "TITLE_PREV_PRD_COUNT": 0,
+                  "TITLE_CURR_PRD_SUM": 0,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 1,
+                  "ADDRESS_PREV_PRD_COUNT": 3,
+                  "ADDRESS_CURR_PRD_SUM": 6,
+                  "ADDRESS_PREV_PRD_SUM": 4,
+                  "YTD": 651
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 4,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "REGION_ID": 2,
+                  "FREQUENCY_ID": 4,
+                  "MEMBER_TYPE": "I",
+                  "MAINT_CURR_PRD_COUNT": 16619,
+                  "MAINT_PREV_PRD_COUNT": 0,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 16948,
+                  "BANK_PREV_PRD_COUNT": 0,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 476,
+                  "TITLE_PREV_PRD_COUNT": 0,
+                  "TITLE_CURR_PRD_SUM": 617,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 2010,
+                  "ADDRESS_PREV_PRD_COUNT": 0,
+                  "ADDRESS_CURR_PRD_SUM": 8587,
+                  "ADDRESS_PREV_PRD_SUM": 0,
+                  "YTD": 45257
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "REGION_ID": 2,
+                  "FREQUENCY_ID": 4,
+                  "MEMBER_TYPE": "E",
+                  "MAINT_CURR_PRD_COUNT": 392,
+                  "MAINT_PREV_PRD_COUNT": 0,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 138,
+                  "BANK_PREV_PRD_COUNT": 0,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 9,
+                  "TITLE_PREV_PRD_COUNT": 0,
+                  "TITLE_CURR_PRD_SUM": 7,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 41,
+                  "ADDRESS_PREV_PRD_COUNT": 0,
+                  "ADDRESS_CURR_PRD_SUM": 64,
+                  "ADDRESS_PREV_PRD_SUM": 0,
+                  "YTD": 651
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 3,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "REGION_ID": 2,
+                  "FREQUENCY_ID": 3,
+                  "MEMBER_TYPE": "I",
+                  "MAINT_CURR_PRD_COUNT": 1691,
+                  "MAINT_PREV_PRD_COUNT": 1644,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 246,
+                  "BANK_PREV_PRD_COUNT": 832,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 57,
+                  "TITLE_PREV_PRD_COUNT": 44,
+                  "TITLE_CURR_PRD_SUM": 33,
+                  "TITLE_PREV_PRD_SUM": 54,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 194,
+                  "ADDRESS_PREV_PRD_COUNT": 163,
+                  "ADDRESS_CURR_PRD_SUM": 687,
+                  "ADDRESS_PREV_PRD_SUM": 625,
+                  "YTD": 45257
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "REGION_ID": 2,
+                  "FREQUENCY_ID": 3,
+                  "MEMBER_TYPE": "E",
+                  "MAINT_CURR_PRD_COUNT": 23,
+                  "MAINT_PREV_PRD_COUNT": 21,
+                  "MAINT_RQ_SCORE": 0,
+                  "BANK_CURR_PRD_COUNT": 2,
+                  "BANK_PREV_PRD_COUNT": 14,
+                  "BANK_RQ_SCORE": 0,
+                  "MIFT_CURR_PRD_COUNT": 0,
+                  "MIFT_PREV_PRD_COUNT": 0,
+                  "MIFT_RQ_SCORE": 0,
+                  "TITLE_RQ_SCORE": 0,
+                  "TITLE_CURR_PRD_COUNT": 1,
+                  "TITLE_PREV_PRD_COUNT": 3,
+                  "TITLE_CURR_PRD_SUM": 0,
+                  "TITLE_PREV_PRD_SUM": 0,
+                  "ADDRESS_RQ_SCORE": 0,
+                  "ADDRESS_CURR_PRD_COUNT": 4,
+                  "ADDRESS_PREV_PRD_COUNT": 3,
+                  "ADDRESS_CURR_PRD_SUM": 10,
+                  "ADDRESS_PREV_PRD_SUM": 5,
+                  "YTD": 651
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

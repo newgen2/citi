@@ -1,0 +1,64 @@
+{
+	"ONBOARD_ACCESS": 1,
+	"TRADE_SETTLEMENT_ACCESS": 1,
+	"USER_INFO": {
+		"soeId": "JD26293",
+		"firstName": "John",
+		"lastName": "Donovan",
+		"lUserName": "Donovan, John",
+		"sCurrentDate": "Friday, March 16, 2018",
+		"profileId": "ONBOARD_HYBRID_USER"
+	},
+	"APP_CONFIG_VALUES": {
+		"BUSINESS_DATE": "02/16/2018",
+		"SESSION_IDLE": 25,
+		"SESSION_TIMEOUT": 5
+	},
+	"TRADE_SETTLEMENT_ENTITLEMENTS": {
+		"opstechGraphAccessVO": {
+			"rqRatingGraphAccess": 1,
+			"locationGraphAccess": 1,
+			"tradeTypeGraphAccess": 1,
+			"byAgeGraphAccess": 1
+		},
+		"opstechTableAccessVO": {
+			"tradeDetailTableAccess": 1,
+			"tradeSummaryTableAccess": 1
+		},
+		"opstechCommentAccessVO": {
+			"commentAccess": 1
+		},
+		"configEntitlementVO": {
+			"EMAIL": "1",
+			"DETAIL": "1",
+			"COMMENT": "1"
+		},
+		"userPreferenceVO": [{
+			"preferenceName": "SUMMARY_TABLE",
+			"preferenceValue": "0"
+		}, {
+			"preferenceName": "TRADE_DETAILS_TABLE",
+			"preferenceValue": "1"
+		}]
+	},
+	"ONBOARD_ENTITLEMENTS": {
+		"onboardGraphAccess": {
+			"aoGraphAccesss": 1,
+			"kycGraphAccess": 1,
+			"amGraphAccess": 1,
+			"webEnrollgraphAccess": 1,
+			"cssGraphAccess": 1,
+			"dmsGraphAccess": 1
+		}
+	},
+	"MENU_ENTITLEMENTS": {
+		"opstechReportAccess": 1,
+		"opstechSnapshotAccess": 1,
+		"opstechUserPrefAccess": 1,
+		"setlDashboard": 1,
+		"onboardReportAccess": 0,
+		"onboardSnapshotAccess": 0,
+		"onboardUserPrefAccess": 0,
+		"onboardDashboard": 1
+	}
+}

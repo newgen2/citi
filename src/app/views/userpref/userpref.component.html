@@ -1,0 +1,55 @@
+<style>
+    .card-header {
+        font-weight: bold;
+        color: rgb(114, 114, 114);
+    }
+
+    .userpref {
+        padding-left: 10px;
+    }
+    input[type="radio"]+.label-text:before {
+    
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    width: 1em;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .btn-primary{
+    border-color: 'none';
+	outline: 0;
+  }
+
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                User Preferences
+            </div>
+            <div class="card-body">
+                <div class="userpref">
+                    <table border="0" width="50%">
+                        <tbody>
+                          <tr>
+                            <td *ngFor="let userPref of userPreference">
+                            <label>
+                                <input class="minimal" [value]="userPref.name" [(ngModel)]="valueS" type="radio" name="radButton">
+                                <span class="label-text">{{userPref.name}}</span>
+                            </label>
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <button class="btn btn-secondary" (click)="selectPref()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

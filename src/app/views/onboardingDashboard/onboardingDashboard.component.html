@@ -1,0 +1,1452 @@
+<style>
+  label {
+    position: relative;
+    cursor: pointer;
+    font-size: 11px;
+    margin-bottom: 0rem;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    right: 9000px;
+  }
+
+  /*Check box*/
+
+  input[type="checkbox"]+.label-text:before {
+    content: "\f096";
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    width: 1em;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+
+
+  input[type="checkbox"]:checked+.label-text:before {
+    /* content: "\f14a"; */
+    content: "\f046";
+    /* content: "\f0c8"; */
+    animation: effect 250ms ease-in;
+  }
+
+  input[type="checkbox"]:disabled+.label-text:before {
+    content: "\f0c8";
+    color: #ccc;
+  }
+
+  input:read-only {
+    background-color: #F1F1F1;
+  }
+
+  .stClearStream::before {
+    color: #55a975 !important;
+  }
+
+  .stDTC::before {
+    color: #3350aa !important;
+  }
+
+  .stFED::before {
+    color: #d5b168 !important;
+  }
+
+  .stGLOBAL::before {
+    color: #3c8dbc !important;
+  }
+
+  .stMFOFF::before {
+    color: #bb3ca0 !important;
+  }
+
+  .stMFDOM::before {
+    color: #adbb3c !important;
+  }
+
+  .statusFail::before {
+    color: #e60e0e !important;
+  }
+
+  .statusPending::before {
+    color: #ffc200 !important;
+  }
+
+  .stIncomplete::before {
+    color: #FFFF00 !important;
+  }
+
+  .totSell::before {
+    color: #c012de !important;
+  }
+
+  .totbuy::before {
+    color: #20c4c5 !important;
+  }
+
+  .totReceiveFree::before {
+    color: #4484f1 !important;
+  }
+
+  .totDeliveredFree::before {
+    color: #85f144 !important;
+  }
+
+  .riskNo::before {
+    color: green !important;
+  }
+
+  .riskLow::before {
+    color: lightgreen !important;
+  }
+
+  .riskMed::before {
+    color: yellow !important;
+  }
+
+  .riskHi::before {
+    color: #FFBF00 !important;
+  }
+
+  .riskVhi::before {
+    color: red !important;
+  }
+
+  /* #dashboardTbl {
+      max-height: 300px;
+    } */
+
+  @media (min-width: 576px) {
+    #dashboardTbl {
+      max-height: 10em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    #dashboardTbl {
+      max-height: 10.5em;
+    }
+  }
+
+  @media (min-width: 992px) {
+    #dashboardTbl {
+      max-height: 15.5em;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    #dashboardTbl {
+      max-height: 22.5em;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    #dashboardTbl {
+      min-height: 24.5em;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    #dashboardTbl {
+      max-height: 27em;
+    }
+  }
+
+  @media (min-width: 1800px) {
+    #dashboardTbl {
+      max-height: 31em;
+    }
+  }
+
+  .table-responsive::-webkit-scrollbar {
+    width: 10px;
+    margin-left: -10px;
+    -webkit-appearance: none;
+  }
+
+  .table-responsive::-webkit-scrollbar-track {
+    background-color: white;
+    border-right: 1px solid #f2f2f2;
+    border-left: 1px solid #f2f2f2;
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: #e6e6e6;
+    background-clip: content-box;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px 2px;
+  }
+
+  .card {
+    margin-bottom: 5px;
+  }
+
+  .card-body-filter {
+    background-color: #ecf0f5;
+  }
+
+  .card-header {
+    text-align: center;
+    padding-top: .5em !important;
+    padding-bottom: .5em !important;
+  }
+
+  .card-headerfilter {
+    text-align: center;
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+    font-size: 12px;
+    font-weight: bold;
+    /*background-color: white;*/
+    /* border: none; */
+  }
+
+  .modal-lg {
+    max-width: 91% !important;
+  }
+
+
+
+  .red {
+    font-weight: bold;
+    background-color: red !important;
+  }
+
+  /*5*/
+
+  .lightgreen {
+    font-weight: bold;
+    background-color: rgb(109, 236, 109) !important;
+  }
+
+  /*1*/
+
+  .yellow {
+    font-weight: bold;
+    background-color: yellow !important;
+  }
+ .black {
+   color: #000000;
+ }
+ .white {
+   color: #fff;
+ }
+  /*3*/
+
+  .amber {
+    font-weight: bold;
+    background-color: #FFC200 !important;
+  }
+
+  /*4*/
+
+  .green {
+    font-weight: bold;
+    background-color: green !important;
+  }
+
+  /*2*/
+
+  .normal {
+    color: 0;
+    background-color: greenyellow !important;
+  }
+
+  .modal-td {
+    max-width: 70% !important;
+    font-size: 11px !important;
+  }
+
+  .modal-at {
+    max-width: 72% !important;
+  }
+
+  .form-control {
+    font-size: 11px !important;
+  }
+
+  .table tr:hover td {
+    background-color: lightgray;
+  }
+
+  .active {
+    /*background: lightgray;*/
+    background: #3090C7;
+    color: #fff;
+  }
+
+  .active a {
+    color: cyan;
+  }
+
+  .active:hover td:not(:first-child) {
+    background-color: transparent !important;
+
+  }
+
+  .dropdown-item {
+    padding: 5px;
+    font-size: 11px;
+    /* font-weight:600; */
+  }
+
+  .btn {
+    font-size: 11px;
+  }
+
+  .dropdown-menu {
+    padding: 4px 4px;
+    min-width: 6rem;
+  }
+
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 20px;
+  }
+
+  .switch input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked+.slider {
+    background-color: #2196F3;
+  }
+
+  input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+
+  /* Rounded sliders */
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .select-custom {
+    border: 1px solid rgb(191, 191, 194);
+
+
+  }
+
+  .circle-text {
+    display: table-cell;
+    height: 10px;
+    /*change this and the width
+for the size of your initial circle*/
+    width: 10px;
+
+    vertical-align: middle;
+    border-radius: 50%;
+    /*make it pretty*/
+  }
+
+
+  .btn-maximize {
+    cursor: pointer;
+    background-color: grey;
+    height: 13px;
+    width: 15px;
+    border-radius: 3px;
+    content: ' ';
+    position: absolute;
+    right: 0;
+    top: 6px;
+    margin-right: 3px;
+    padding: 3px 4px;
+    -webkit-box-shadow: inset 0px 2px 4px 0px #fff !important;
+    -moz-box-shadow: inset 0px 2px 4px 0px #fff !important;
+    box-shadow: inset 0px 2px 4px 0px #fff !important;
+  }
+
+  .btn-maximize-child {
+    height: 7px;
+    width: 7px;
+    border: 1px solid #fff;
+    border-top: 2px solid #fff;
+  }
+
+  .btn-maximize:hover {
+    background-color: #0066b3 !important;
+  }
+
+  .col-lg-12 {
+    -ms-flex: 0 0 100% !important;
+    -webkit-box-flex: 0 !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    transition: all 0.8s ease-out;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .col-md-12 {
+    -ms-flex: 0 0 100% !important;
+    -webkit-box-flex: 0 !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    transition: all 0.0s ease-out;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .hide {
+    transition: all 1.8s ease-in;
+    display: none;
+  }
+
+  /* Sameer Code starts for Date Cal design */
+
+  .date {
+    display: block;
+    width: 80px;
+    height: 70px;
+    /* margin: 30px auto; */
+    margin: 5px;
+    right: 10px;
+    background: #fff;
+    text-align: center;
+    font-family: 'Helvetica', sans-serif;
+    position: absolute;
+  }
+
+  .date .binds {
+    position: absolute;
+    height: 15px;
+    width: 55px;
+    background: transparent;
+    border: 2px solid #999;
+    border-width: 0 5px;
+    top: -6px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .date .month {
+    background: #555;
+    display: block;
+    padding: 5px 0;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    border-bottom: 0px solid #333;
+    box-shadow: inset 0 -1px 0 0 #666;
+  }
+
+  .date .day {
+    display: block;
+    margin: 0;
+    padding: 5px 0;
+    font-size: 27px;
+    box-shadow: 0 0 3px #ccc;
+    position: relative;
+  }
+
+  .date .day::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 96%;
+    position: absolute;
+    top: 3px;
+    left: 2%;
+    z-index: -1;
+    box-shadow: 0 0 3px #ccc;
+  }
+
+  .date .day::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 90%;
+    position: absolute;
+    top: 6px;
+    left: 5%;
+    z-index: -1;
+    box-shadow: 0 0 3px #ccc;
+  }
+
+  hr {
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+  }
+
+  .circle-label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: solid 0.5px;
+  }
+
+
+
+  /*For table in Account Maintainance with no border*/
+
+  table.noborder {
+    border-collapse: collapse;
+  }
+
+  table.noborder td {
+    border: 1px dashed grey;
+  }
+
+  table.noborder tr:first-child td {
+    height: 40px;
+    text-align: center;
+    border-top: 0;
+  }
+
+  table.noborder tr td:first-child {
+    border-left: 0;
+  }
+
+  table.noborder tr:last-child td {
+    border-bottom: 0;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  table.noborder tr td:last-child {
+    border-right: 0;
+  }
+
+  table.noborder tr:nth-child(2) td {
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+
+
+  }
+
+  .partition {
+    border: 1px dashed rgb(224, 220, 220);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  table {
+    padding: 2px 10px;
+    font-size: 10px;
+    padding-right: 18px;
+    width: 100%;
+  }
+
+  table tr,
+  td {
+
+    padding: 3px;
+  }
+
+  .capitalized-case {
+    text-transform: capitalize !important;
+  }
+
+  ul {
+    margin-bottom: 0px;
+  }
+
+  .no-padding-left-right {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .switch .switch-label{background-color:grey;}
+  .switch .switch-label::before {color: white;}
+</style>
+<div class="animated fadeIn">
+
+  <!-- Upper filter div Start  by Raj on 22/02/2018-->
+  <div class="card" style="background-color:#87cefa;">
+    <div class="card-body" style="padding: 5px 5px 0px 5px;">
+      <div class="row">
+        <div class="col-md-2" style="padding-right: 5px;">
+          <div class="card">
+            <div class="card-header card-headerfilter">
+              Region
+            </div>
+            <div class="card-body" style="padding: 5px;">
+              <table border="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td style="padding:10px" *ngFor="let region of filterAndSideLinkData.REGION | slice:0:2 let i = index">
+                      <label>
+                        <input class="minimal" [value]="region.VALUE" [(ngModel)]="defaultSelection.REGION" (ngModelChange)="onSelectFilter();onSelectFilterDms();onSelectFilter_AM_WE_CSS();"
+                          type="radio" name="region">
+                        <span class="label-text">{{region.NAME}}</span>
+                      </label>
+
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3" style="padding-left: 0px;padding-right: 5px;">
+          <div class="card">
+            <div class="card-header card-headerfilter">
+              Frequency
+            </div>
+            <div class="card-body" style="padding: 5px;">
+              <table border="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td style="padding:10px" *ngFor="let FREQUENCY of filterAndSideLinkData.FREQUENCY">
+
+                      <label>
+                        <input class="minimal" [value]="FREQUENCY.VALUE" [(ngModel)]="defaultSelection.FREQUENCY" (ngModelChange)="onSelectFilter();onSelectFilterDms();onSelectFilter_AM_WE_CSS();"
+                          type="radio" name="FREQUENCY">
+                        <span class="label-text">{{FREQUENCY.NAME}}</span>
+                      </label>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3" style="padding-left: 0px; padding-right: 5px;">
+          <div class="card">
+            <div class="card-header card-headerfilter">
+              Products
+            </div>
+            <div class="card-body" style="padding: 5px;">
+              <table border="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td style="padding: 3px;">
+                      <select style="width: 100%;" class="btn btn-default select-custom" [(ngModel)]="defaultSelection.PRODUCTS" (ngModelChange)="onSelectFilter()">
+                        <option *ngFor="let prod of filterAndSideLinkData.PRODUCTS" [value]="prod.VALUE">{{prod.NAME}}</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3" style="padding-left: 0px;">
+          <div class="card">
+            <div class="card-header card-headerfilter">
+              Account Type
+            </div>
+            <div class="card-body" style="padding: 5px;">
+              <table border="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td style="padding:10px" *ngFor="let ACCOUNT_TYPE of filterAndSideLinkData.ACCOUNT_TYPE | slice:0:2 let i = index">
+                      <label>
+                        <input class="minimal" [value]="ACCOUNT_TYPE.VALUE" [(ngModel)]="defaultSelection.ACCOUNT_TYPE" (ngModelChange)="onSelectFilter();onSelectFilter_AM_WE_CSS();"
+                          type="radio" name="ACCOUNT_TYPE">
+                        <span class="label-text">{{ACCOUNT_TYPE.NAME}}</span>
+                      </label>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1" style="padding-left: 0px; ">
+          <div class="card" style="border:0; background-color:#87cefa;">
+            <div class="card-body" style="padding:0px; padding-top:0%">
+              <input type="Button" class="btn-primary capitalized-case" (click)="ClickbtnReload()" style="margin-top:2px; width:100px;height: 30px;font-size:11px"
+                aria-expanded="true" value="Refresh Data" size="12" id="btnRefreshAll">
+              <input type="Button" class="btn-primary capitalized-case" (click)="ClickbtnReset()" style="margin-top:5px; width:100px;height: 30px;font-size:11px"
+                aria-expanded="true" value="Clear All" size="12" id="btnClearAll">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Upper filter div end -->
+
+  <!-- Detail Div Start -->
+  <div class="card">
+    <div class="card-body" style="padding:5px;">
+      <div class="row">
+        <!-- First Widget for Account opening Start-->
+        <div id="acOpening" class="col-md-3" [ngClass]="{'col-md-12': selectedBox === 'acOpening', 'hide' : acOpeningFlag }" style="padding-right: 5px;">
+          <div class="card">
+            <div class="card-header card-headerfilter">
+              Account Opening
+              <div (click)="toggleSelectedBox('acOpening')" class="btn-maximize">
+                <div class="btn-maximize-child"></div>
+              </div>
+            </div>
+            <div class="card-body" style="padding: 5px; min-height:200px;">
+              <!-- Sameer Code Goes Here -->
+              <div class="row">
+                <!-- First Child Widget for Account opening Start-->
+                <div [ngClass]="(selectedBox === 'acOpening' ) ? 'col-lg-4': 'col-md-12'">
+                  <div class="col-lg-10" style=" padding:5px;">
+                    <label style="width:33%" *ngFor="let rec of filterAndSideLinkData.CLIENT_TYPE">
+                      <input class="minimal" [value]="rec.VALUE" [(ngModel)]="defaultSelection.selectedUsers" (change)="loadAOWidget()" type="radio"
+                        name="usertype">
+                      <span class="label-text">{{rec.NAME}}</span>
+                    </label>
+                  </div>
+                  <!-- Calender Widget Code Starts -->
+                  <div class="date" style="top: 0px;">
+                    <span class="binds"></span>
+                    <span class="month" *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_RQ == 0 || AccountOpeningWidget_Model.CYCLE_TIME_RQ  == 1 || AccountOpeningWidget_Model.CYCLE_TIME_RQ  == 2"
+                      style="background: green;">YTD AVG</span>
+                    <h1 class="day" *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_RQ == 0 || AccountOpeningWidget_Model.CYCLE_TIME_RQ  == 1 || AccountOpeningWidget_Model.CYCLE_TIME_RQ  == 2"
+                      style="color: green;">{{AccountOpeningWidget_Model.CYCLE_TIME_YTD}}</h1>
+                    <span class="month" *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_RQ == 3 || AccountOpeningWidget_Model.CYCLE_TIME_RQ  == 4"
+                      style="background: #FFCC00;">YTD AVG</span>
+                    <h1 class="day" *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_RQ == 3 || AccountOpeningWidget_Model.CYCLE_TIME_RQ  == 4" style="color: #FFCC00;">{{AccountOpeningWidget_Model.CYCLE_TIME_YTD}}</h1>
+                    <span class="month" *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_RQ == 5" style="background: red;">YTD AVG</span>
+                    <h1 class="day" *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_RQ == 5" style="color: red;">{{AccountOpeningWidget_Model.CYCLE_TIME_YTD}}</h1>
+                  </div>
+                  <div class="card-headerfilter" style="text-align: left;">Cycle Time</div>
+                  <hr style="width: 75%; float: left;" />
+                  <table style="width:60%;text-align:center;">
+                    <thead>
+                      <tr>
+                        <td>LP</td>
+                        <td>CP</td>
+                        <td>% Change</td>
+                        <td>RQ</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{AccountOpeningWidget_Model.CYCLE_TIME_LSLA_LM}}</td>
+                        <td>{{AccountOpeningWidget_Model.CYCLE_TIME_LSLA_CM}}</td>
+                        <td>{{absValue(AccountOpeningWidget_Model.CYCLE_TIME_LSLA_MOM)}}
+                          <i class="fa fa-arrow-up" *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_LSLA_MOM < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-arrow-down" *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_LSLA_MOM > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_LSLA_MOM == 0" style="font-weight:bold"></i>
+                        </td>
+                        <td>
+                          <svg height="20" width="20">
+                            <circle *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_RQ == 0 || AccountOpeningWidget_Model.CYCLE_TIME_RQ == 1 || AccountOpeningWidget_Model.CYCLE_TIME_RQ == 2"
+                              cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green" />
+                            <circle *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_RQ == 3 || AccountOpeningWidget_Model.CYCLE_TIME_RQ ==4" cx="12" cy="12"
+                              r="6" stroke="black" stroke-width="1" fill="#FFCC00" />
+                            <circle *ngIf="AccountOpeningWidget_Model.CYCLE_TIME_RQ == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red"
+                            />
+                          </svg>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- Code for LineChart Goes Here -->
+                  <!-- <ScaleChartRe [data] = "[]" ></ScaleChartRe> -->
+                  <lineChart (chartClickEvent)="chartClicked($event)" (chartHoverEvent)="chartHover($event)" [id]="line" *ngIf="AccountOpeningLineChartData.length>0"
+                    [data]="AccountOpeningLineChartData" id="LineChart1"></lineChart>
+                  <hr class="partition" />
+                </div>
+                <!-- First Child Widget for Account opening Ends-->
+
+                <!-- Second Child Widget for Account opening Start-->
+                <div [ngClass]="(selectedBox === 'acOpening' ) ? 'col-lg-4': 'col-md-12'">
+                  <!-- <div class="col-sm-12 col-lg-4">
+                    <span class=" badge-pill badge-info circle-label"></span>
+                  </div> -->
+                  <div class="card-headerfilter" style="text-align: left;">Account Opening Volume</div>
+                  <hr style="width: 75%; float: left;" />
+                  <!-- Calender Widget Code Starts -->
+                  <div class="date" style="top: 0px;">
+                    <span class="binds"></span>
+                    <span class="month" *ngIf="AccountOpeningWidget_Model.AO_VOL_RQ == 0 || AccountOpeningWidget_Model.AO_VOL_RQ  == 1 || AccountOpeningWidget_Model.AO_VOL_RQ  == 2"
+                      style="background: green;">YTD VOL</span>
+                    <h1 class="day" *ngIf="AccountOpeningWidget_Model.AO_VOL_RQ == 0 || AccountOpeningWidget_Model.AO_VOL_RQ  == 1 || AccountOpeningWidget_Model.AO_VOL_RQ  == 2"
+                      style="color: green;">{{AccountOpeningWidget_Model.AO_VOL_YTD}}</h1>
+                    <span class="month" *ngIf="AccountOpeningWidget_Model.AO_VOL_RQ == 3 || AccountOpeningWidget_Model.AO_VOL_RQ  == 4" style="background: #FFCC00;">YTD VOL</span>
+                    <h1 class="day" *ngIf="AccountOpeningWidget_Model.AO_VOL_RQ == 3 || AccountOpeningWidget_Model.AO_VOL_RQ  == 4" style="color: #FFCC00;">{{AccountOpeningWidget_Model.AO_VOL_YTD}}</h1>
+                    <span class="month" *ngIf="AccountOpeningWidget_Model.AO_VOL_RQ == 5" style="background: red;">YTD VOL</span>
+                    <h1 class="day" *ngIf="AccountOpeningWidget_Model.AO_VOL_RQ == 5" style="color: red;">{{AccountOpeningWidget_Model.AO_VOL_YTD}}</h1>
+                  </div>
+                  <!-- Calender Widget Code Ends -->
+
+                  <table style="width:60%;text-align:center;">
+                    <thead>
+                      <tr>
+                        <td>LP</td>
+                        <td>CP</td>
+                        <td>% Change</td>
+                        <td>RQ</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{AccountOpeningWidget_Model.AO_VOL_LSLA_LM}}</td>
+                        <td>{{AccountOpeningWidget_Model.AO_VOL_LSLA_CM}}</td>
+                        <td>{{absValue(AccountOpeningWidget_Model.AO_VOL_LSLA_MOM)}}
+                          <i class="fa fa-arrow-up" *ngIf="AccountOpeningWidget_Model.AO_VOL_LSLA_MOM < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-arrow-down" *ngIf="AccountOpeningWidget_Model.AO_VOL_LSLA_MOM > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" *ngIf="AccountOpeningWidget_Model.AO_VOL_LSLA_MOM == 0" style="font-weight:bold"></i>
+                        </td>
+                        <td>
+                          <svg height="20" width="20">
+                            <circle *ngIf="AccountOpeningWidget_Model.AO_VOL_RQ == 0 || AccountOpeningWidget_Model.AO_VOL_RQ  == 1 || AccountOpeningWidget_Model.AO_VOL_RQ  == 2"
+                              cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green" />
+                            <circle *ngIf="AccountOpeningWidget_Model.AO_VOL_RQ == 3 || AccountOpeningWidget_Model.AO_VOL_RQ  == 4" cx="12" cy="12" r="6"
+                              stroke="black" stroke-width="1" fill="#FFCC00" />
+                            <circle *ngIf="AccountOpeningWidget_Model.AO_VOL_RQ  == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red"
+                            />
+                          </svg>
+
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- Code for BarChart will go here -->
+                  <BarChart *ngIf="AccountOpeningVolumeBarChartData.length>0" [data]="AccountOpeningVolumeBarChartData"></BarChart>
+                  <hr class="partition" />
+                </div>
+                <!-- Second Child Widget for Account opening End-->
+                <!-- Third Child Widget for Account opening Start-->
+                <div [ngClass]="(selectedBox === 'acOpening' ) ? 'col-lg-4': 'col-md-12'" style="padding:5px;">
+                  <div class="card-headerfilter" style="text-align: left;"> Volume By Product</div>
+                  <hr />
+                  <!-- <ScaleChart *ngIf="isVolByProductFlag" [data]="VolumeByProductScaleChartData"></ScaleChart> -->
+                  <pieChartV1 *ngIf="isVolByProductFlag" [isDonut]=f alse [data]="VolumeByProductScaleChartData" [id]="chart2ID"></pieChartV1>
+                </div>
+                <!-- Third Child Widget for Account opening End-->
+              </div>
+              <!-- Sameer Code Ends Here -->
+            </div>
+          </div>
+        </div>
+        <!-- First Widget for Account opening End-->
+        <!-- Parent Widget for remaining Starts -->
+        <!-- <div id="parentWidget" class="col-md-6" [ngClass]="{'col-md-12': (selectedBox === 'acMaint' || selectedBox === 'AOC' || selectedBox === 'acMain' || selectedBox === 'scanningDocs' || selectedBox === 'webEnrollments' || selectedBox === 'nameScreening'), 'hide' : parentWidgetFlag }"
+          style="padding-left: 0px; padding-right: 15px;"> -->
+        <!-- Second Widget for Account Opening Cycle Starts-->
+        <!-- <div id="AOC" class="col-md-6" [ngClass]="{'hide' : aocFlag }" style="padding-left: 0px !important; padding-right: 0px !important;"> -->
+        <div class="col-md-6" [ngClass]="{'col-md-12': selectedBox === 'AOC' || selectedBox === 'acMaint' || 
+        (selectedBox === 'webEnrollments' || selectedBox === 'nameScreening'), 'no-padding-left-right' : (selectedBox !== 'AOC' && selectedBox !== 'acMaint' && !(selectedBox === 'webEnrollments' || selectedBox === 'nameScreening'))}">
+          <div id="AOC" class="col-md-12" [ngClass]="{'hide' : aocFlag }" style="padding-left: 0px !important; padding-right: 0px !important;">
+            <div class="card">
+              <div class="card-header card-headerfilter">
+                KYC
+                <div (click)="toggleSelectedBox('AOC')" class="btn-maximize">
+                  <div class="btn-maximize-child"></div>
+                </div>
+              </div>
+              <div class="card-body" style="padding: 5px;">
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- First Part for KYC Starts Here -->
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <div class="date" style="left: 10px;">
+                          <span class="binds"></span>
+                          <span class="month" style="background: green;">YTD AVG</span>
+                          <h1 class="day" style="color: green;">{{ytdAvg}}</h1>
+                        </div>
+                      </div>
+                      <div class="col-lg-8">
+                        <table style="text-align:center;">
+                          <thead>
+                            <tr>
+                              <td></td>
+                              <td>CP</td>
+                              <td>LP</td>
+                              <td>% Change</td>
+                              <td>RQ</td>
+                              <!-- <td>REJECTS</td> -->
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let rec of KYCData">
+
+                              <td>{{rec.type}}</td>
+                              <!-- <td>{{rec.CM | number : '1.2-2'}}</td>
+                              <td>{{rec.LM | number : '1.2-2'}}</td> -->
+                              <td>{{rec.CM | number}}</td>
+                              <td>{{rec.LM | number}}</td>
+                              <td>{{absValue(rec.MOM)}}
+                                <i class="fa fa-arrow-up" *ngIf="rec.MOM < 0" style="font-weight:bold"></i>
+                                <i class="fa fa-arrow-down" *ngIf="rec.MOM > 0" style="font-weight:bold"></i>
+                                <i class="fa fa-minus" *ngIf="rec.MOM == 0" style="font-weight:bold"></i>
+                              </td>
+                              <td>
+                                <svg height="20" width="20">
+                                  <circle *ngIf="rec.RQ == 0 || rec.RQ == 1 || rec.RQ == 2"
+                                  cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green" />
+                                <circle *ngIf="rec.RQ == 3 || rec.RQ ==4" cx="12" cy="12"
+                                  r="6" stroke="black" stroke-width="1" fill="#FFCC00" />
+                                <circle *ngIf="rec.RQ == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red"
+                                />
+                                </svg>
+                              </td>
+                              <!-- <td>{{rec.REJECTS}}</td> -->
+                            </tr>
+                            <tr *ngFor="let rec of KYCCycle">
+
+                              <td>{{rec.type}}</td>
+                              <!-- <td>{{rec.CM | number : '1.2-2'}}</td>
+                              <td>{{rec.LM | number : '1.2-2'}}</td> -->
+                              <td>{{rec.CM | number}}</td>
+                              <td>{{rec.LM | number}}</td>
+                              <td>{{absValue(rec.MOM)}}
+                                <i class="fa fa-arrow-up" *ngIf="rec.MOM < 0" style="font-weight:bold"></i>
+                                <i class="fa fa-arrow-down" *ngIf="rec.MOM > 0" style="font-weight:bold"></i>
+                                <i class="fa fa-minus" *ngIf="rec.MOM == 0" style="font-weight:bold"></i>
+                              </td>
+                              <td>
+                                <svg height="20" width="20">
+                                  <circle *ngIf="rec.RQ == 0 || rec.RQ == 1 || rec.RQ == 2"
+                                  cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green" />
+                                <circle *ngIf="rec.RQ == 3 || rec.RQ ==4" cx="12" cy="12"
+                                  r="6" stroke="black" stroke-width="1" fill="#FFCC00" />
+                                <circle *ngIf="rec.RQ == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red"
+                                />
+                                </svg>
+                              </td>
+                              <!-- <td>{{rec.REJECTS}}</td> -->
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="col-lg-2">
+                        <div class="date">
+                          <span class="binds"></span>
+                          <span class="month" style="background: green;">YTD VOL</span>
+                          <h1 class="day" style="color: green;">{{ytdVol}}</h1>
+                        </div>
+                      </div>
+                      <!-- <hr class="partition"> -->
+                    </div>
+                    <!-- First Part for KYC Ends Here -->
+                    <!-- Second Part for KYC Starts-->
+
+                  </div>
+                  <div class="col-md-12">
+                    <DiveringStack *ngIf="kycChartData.length > 0" (chartClickEvent)="chartClicked($event)" (chartHoverEvent)="chartHover($event)"
+                      [id]="divering" [data]="kycChartData" id="DiveringChart1"></DiveringStack>
+
+                  </div>
+                  <!-- <div class="col-md-12">
+                       
+                           <ul class="breadcrumbl" *ngFor="let kycUlElement of KYCChart">
+                          
+                              <li *ngFor="let kycLiElement of kycUlElement.WorkStepData"><a [style.width.px] = "kycLiElement.width" [style.background]="kycLiElement.color"  style="text-align:center" href="#">{{kycLiElement.Value}}</a></li>
+                        
+                            </ul>
+                            <DiveringStack *ngIf="kycChartData.length > 0" (chartClickEvent)="chartClicked($event)" (chartHoverEvent)="chartHover($event)" [id]="divering" [data]="kycChartData" id="DiveringChart1"></DiveringStack>
+                        </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Second Widget for Account Opening Cycle Ends-->
+          <!-- <div class="row"> -->
+            <!-- Second Widget for KYC START-->
+            <div id="acMaint" class="col-md-12" [ngClass]="{'col-md-12' : selectedBox === 'acMaint','hide' : acMaintFlagcard }" style="padding-left: 0px !important; padding-right: 0px !important;">
+              <div class="card">
+                <div class="card-header card-headerfilter">
+                  Account Maintenance
+                  <!-- <label class="switch switch-sm switch-text switch-info float-right mb-0">
+                    <input type="checkbox" class="switch-input" checked="">
+                    <span class="switch-label" data-on="AC" data-off="EG"></span>
+                    <span class="switch-handle"></span>
+                  </label> -->
+                  <div (click)="toggleSelectedBox('acMaint')" class="btn-maximize">
+                    <div class="btn-maximize-child"></div>
+                  </div>
+
+                </div>
+                <div class="card-body" style="padding: 5px; min-height:154px;">
+                  <!-- <table style="height:35px">
+                                                <tr class="bold" style="width:50%">
+                                                  <td style=""></td>
+                                                  <td style="text-align:right;padding-right:10px">YTD</td>
+                                                  <td style="width:25%;text-align:right;background: linear-gradient(
+                                                      to bottom,
+                                                      #f8c92e,
+                                                      #f7e822 50%,
+                                                      #eef111 50%,
+                                                      #f0c816
+                                                    );border-left: 6px solid black;">96,660</td>
+                                
+                                                </tr>
+                                
+                                              </table> -->
+
+                  <table class="noborder"  *ngIf="this.AccountMaintainencData.length > 0">
+                    <tr>
+                      <td>BANKER CHANGES</td>
+                      <td>A/C's CLOSED</td>
+                      <td>MIFT/TELE CHANGES</td>
+                      <td>TITLE CHANGES(EG)</td>
+                      <td>TITLE CHANGES(A/C)</td>
+                      <td>ADDRESS CHANGES(EG)</td>
+                      <td>ADDRESS CHANGES(A/C)</td>
+                      <td>YTD</td>
+                    </tr>
+                    <tr>
+                      <td *ngIf="acctBanker>0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_BANKER)"><a href="javascript:void(0)"><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_BANKER)"> {{acctBanker}}</font></a></td>
+                      <td *ngIf="acctBanker==0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_BANKER)"><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_BANKER)"> {{acctBanker}}</font></td>
+                      <td *ngIf="acctMaint>0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_MAINTENANCE)"><a href="javascript:void(0)"><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_MAINTENANCE)">{{acctMaint}}</font></a></td>
+                      <td *ngIf="acctMaint==0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_MAINTENANCE)"><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_MAINTENANCE)">{{acctMaint}}</font></td>
+                      <td *ngIf="acctMift>0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_MIFT)"><a href="javascript:void(0)" ><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_MIFT)">{{acctMift}}</font></a></td>
+                      <td *ngIf="acctMift==0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_MIFT)"><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_MIFT)">{{acctMift}}</font></td>
+                      <td *ngIf="acctTitle_Eg>0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_TITLE_EG)"><a href="javascript:void(0)" ><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_TITLE_EG)">{{acctTitle_Eg}}</font></a></td>
+                      <td *ngIf="acctTitle_Eg==0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_TITLE_EG)"><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_TITLE_EG)">{{acctTitle_Eg}}</font></td>
+                      <td *ngIf="acctTitle_Acct>0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_TITLE_ACCT)"><a href="javascript:void(0)" ><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_TITLE_ACCT)">{{acctTitle_Acct}}</font></a></td>
+                      <td *ngIf="acctTitle_Acct==0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_TITLE_ACCT)"><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_TITLE_ACCT)">{{acctTitle_Acct}}</font></td>
+                      <td *ngIf="acctAddr_Eg>0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_ADDRESS_EG)"><a href="javascript:void(0)" ><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_ADDRESS_EG)">{{acctAddr_Eg}}</font></a></td>
+                      <td *ngIf="acctAddr_Eg==0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_ADDRESS_EG)"><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_ADDRESS_EG)">{{acctAddr_Eg}}</font></td>
+                      <td *ngIf="acctAddr_Acct>0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_ADDRESS_ACCT)"><a href="javascript:void(0)"  ><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_ADDRESS_ACCT)">{{acctAddr_Acct}}</font></a></td>
+                      <td *ngIf="acctAddr_Acct==0" [ngClass]="acctMaintRQBGColor(this.AccountMaintainencData[0].RQ_ADDRESS_ACCT)"><font [ngClass]="acctMaintRQFontColor(this.AccountMaintainencData[0].RQ_ADDRESS_ACCT)">{{acctAddr_Acct}}</font></td>
+                      <td style="background-color: #ef9b0f">{{this.ytdAccountMaintainence}}</td>
+                     </tr>
+                    <tr>
+                      <td>{{this.AccountMaintainencData[0].PREV_BANKER_VOLUME}}
+                          <i class="fa fa-arrow-up" *ngIf="this.AccountMaintainencData[0].POP_BANKER < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-arrow-down" *ngIf="this.AccountMaintainencData[0].POP_BANKER > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" *ngIf="this.AccountMaintainencData[0].POP_BANKER == 0" style="font-weight:bold"></i>
+                      </td>
+                      <td>{{this.AccountMaintainencData[0].PREV_MAINTENANCE_VOLUME}}
+                          <i class="fa fa-arrow-up" *ngIf="this.AccountMaintainencData[0].POP_MAINTENANCE < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-arrow-down" *ngIf="this.AccountMaintainencData[0].POP_MAINTENANCE > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" *ngIf="this.AccountMaintainencData[0].POP_MAINTENANCE == 0" style="font-weight:bold"></i>
+                      </td>
+                      <td>{{this.AccountMaintainencData[0].PREV_MIFT_VOLUME}}
+                          <i class="fa fa-arrow-up" *ngIf="this.AccountMaintainencData[0].POP_MIFT < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-arrow-down" *ngIf="this.AccountMaintainencData[0].POP_MIFT > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" *ngIf="this.AccountMaintainencData[0].POP_MIFT == 0" style="font-weight:bold"></i>
+                      </td>
+                      <td>{{this.AccountMaintainencData[0].PREV_TITLE_VOLUME_EG}}
+                          <i class="fa fa-arrow-up" *ngIf="this.AccountMaintainencData[0].POP_TITLE_EG < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-arrow-down" *ngIf="this.AccountMaintainencData[0].POP_TITLE_EG > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" *ngIf="this.AccountMaintainencData[0].POP_TITLE_EG == 0" style="font-weight:bold"></i>
+                      </td>
+                      <td>{{this.AccountMaintainencData[0].PREV_TITLE_VOLUME_ACCT}}
+                          <i class="fa fa-arrow-up" *ngIf="this.AccountMaintainencData[0].POP_TITLE_ACCT < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-arrow-down" *ngIf="this.AccountMaintainencData[0].POP_TITLE_ACCT > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" *ngIf="this.AccountMaintainencData[0].POP_TITLE_ACCT == 0" style="font-weight:bold"></i>
+                      </td>
+                      <td>{{this.AccountMaintainencData[0].PREV_ADDRESS_VOLUME_EG}}
+                          <i class="fa fa-arrow-up" *ngIf="this.AccountMaintainencData[0].POP_ADDRESS_EG < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-arrow-down" *ngIf="this.AccountMaintainencData[0].POP_ADDRESS_EG > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" *ngIf="this.AccountMaintainencData[0].POP_ADDRESS_EG == 0" style="font-weight:bold"></i>
+                      </td>
+                      <td>{{this.AccountMaintainencData[0].PREV_ADDRESS_VOLUME_ACCT}}
+                          <i class="fa fa-arrow-up" *ngIf="this.AccountMaintainencData[0].POP_ADDRESS_ACCT < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-arrow-down" *ngIf="this.AccountMaintainencData[0].POP_ADDRESS_ACCT > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" *ngIf="this.AccountMaintainencData[0].POP_ADDRESS_ACCT == 0" style="font-weight:bold"></i>
+                      </td>
+                      <td></td>
+                    </tr>
+                  </table>
+                  <div style="text-align:center;font-size:11px">CURRENT VS PREVIOUS MONTH CHANGE
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Second Widget for KYC End-->
+
+
+            <!-- Widget for Scanning of Documents Ends-->
+            <!-- Fourth Widget for Account Maintenance  Start-->
+            <!-- Fourth Widget for Account Maintenance  Start-->
+            <div id="webEnrollments" class="col-md-12" [ngClass]="{'col-md-12' : (selectedBox === 'webEnrollments' || selectedBox === 'nameScreening'), 'hide' : webEnrollmentsFlag}" style="padding-left: 0px !important; padding-right: 0px !important;">
+              <div class="card" [ngClass]="{'hide' : webEnrollmentsFlagcard}">
+                <div class="card-header card-headerfilter">
+                  Web Enrollments
+                  <div (click)="toggleSelectedBox('webEnrollments')" class="btn-maximize">
+                    <div class="btn-maximize-child"></div>
+                  </div>
+                </div>
+                <div class="card-body" style="padding: 5px; min-height:200px;">
+                  <table style="width:100%;text-align:center;" *ngIf="this.webEnrollmentsData.length > 0">
+                    <thead>
+                      <tr>
+                        <td></td>
+                        <td>YTD</td>
+                        <td>LP</td>
+                        <td>CP</td>
+                        <td>% Change</td>
+                        <td>RQ</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>REQUESTS</td>
+                        <td>{{this.webEnrollmentsData[0].YTD_VOLUME}}</td>
+                        <td>{{this.webEnrollmentsData[0].PREVIOUS_VOLUME}}</td>
+                        <td>{{this.webEnrollmentsData[0].CURRENT_VOLUME}}</td>
+                        <td>{{absValue(this.webEnrollmentsData[0].POP_PERC)}}
+                            <i class="fa fa-arrow-up" *ngIf="this.webEnrollmentsData[0].POP_PERC < 0" style="font-weight:bold"></i>
+                            <i class="fa fa-arrow-down" *ngIf="this.webEnrollmentsData[0].POP_PERC > 0" style="font-weight:bold"></i>
+                            <i class="fa fa-minus" *ngIf="this.webEnrollmentsData[0].POP_PERC == 0" style="font-weight:bold"></i>
+                        </td>
+                        <td>
+                          <svg height="20" width="20">
+                              <circle *ngIf="this.webEnrollmentsData[0].RQ == 0 || this.webEnrollmentsData[0].RQ  == 1 || this.webEnrollmentsData[0].RQ  == 2"
+                              cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green" />
+                            <circle *ngIf="this.webEnrollmentsData[0].RQ == 3 || this.webEnrollmentsData[0].RQ  == 4" cx="12" cy="12" r="6"
+                              stroke="black" stroke-width="1" fill="#FFCC00" />
+                            <circle *ngIf="this.webEnrollmentsData[0].RQ  == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red"
+                            />
+                          </svg>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- <lineChart (chartClickEvent)="chartClicked($event)" (chartHoverEvent)="chartHover($event)" [id]="line" [data]="WebEnrollmentLineChartData"
+                                        id="LineChart1"></lineChart> -->
+
+                  <BarChart *ngIf="WebEnrollmentsBarChartData.length>0" [data]="this.WebEnrollmentsBarChartData"></BarChart>
+
+                  <!-- <ScaleChartRe [data]="webEnrollmentScaleChartData"></ScaleChartRe> -->
+                </div>
+              </div>
+
+
+            </div>
+          <!-- </div> -->
+        </div>
+
+        <!-- Third Widget for Account Maintenance  Start-->
+        <div id="scanningDocs" class="col-md-3" [ngClass]="{'col-md-12': selectedBox === 'scanningDocs' || selectedBox === 'nameScreening'}"
+          style="padding-left: 5px; padding-right: 15px;">
+
+          <!-- Third Widget for Account Maintenance  Start-->
+          <!-- Widget for Scanning of Documents Starts-->
+          <div id="card" class="card" [ngClass]="{'hide' : scanningDocsFlagcard}">
+            <div class="card-header card-headerfilter">
+              Scanning Of Documents
+              <div (click)="toggleSelectedBox('scanningDocs')" class="btn-maximize">
+                <div class="btn-maximize-child"></div>
+              </div>
+
+            </div>
+            <div class="card-body" style="padding: 5px; min-height:200px;">
+              <div class="row">
+                <!-- First part of Scanning of Documents Starts Here -->
+                <div [ngClass]="(selectedBox === 'scanningDocs' ) ? 'col-lg-6': 'col-md-12'">
+
+                  <table *ngIf="this.ScanningDocs.length > 0">
+                    <thead>
+                      <tr class="bold">
+                        <td></td>
+                        <td>YTD VOL</td>
+                        <td>CP</td>
+                        <td>LP</td>
+                        <td>% Change</td>
+                        <td>RQ</td>
+
+
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+
+                        <td></td>
+                        <td class="bold">Trust Scanned (Pages)</td>
+                        <td>{{this.ScanningDocs[0].CURR_TRUST_SCANNED}}</td>
+                        <td>{{this.ScanningDocs[0].PREV_TRUST_SCANNED}}</td>
+                        <td>{{absValue(this.ScanningDocs[0].POP_TRUST_SCANNED)}}
+                          <!-- <i style="font-size:20px; vertical-align: middle;" class="fa fa-caret-down"></i> {{rec.POP_SCANNER}}</td> -->
+                          <i class="fa fa-caret-up" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_TRUST_SCANNED < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-caret-down" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_TRUST_SCANNED > 0"
+                            style="font-weight:bold"></i>
+                          <i class="fa fa-minus" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_TRUST_SCANNED == 0" style="font-weight:bold"></i>
+                          <td>
+                            <svg height="20" width="20">
+                              <circle *ngIf="this.ScanningDocs[0].RQ_TRUST_SCANNED == 0 || this.ScanningDocs[0].RQ_TRUST_SCANNED  == 1 || this.ScanningDocs[0].RQ_TRUST_SCANNED  == 2"
+                                cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green" />
+                              <circle *ngIf="this.ScanningDocs[0].RQ_TRUST_SCANNED == 3 || this.ScanningDocs[0].RQ_TRUST_SCANNED  == 4" cx="12" cy="12" r="6" stroke="black"
+                                stroke-width="1" fill="#FFCC00" />
+                              <circle *ngIf="this.ScanningDocs[0].RQ_TRUST_SCANNED  == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red" />
+                            </svg>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td class="bold">Scanned/ Upload (Docs)</td>
+                        <td>{{this.ScanningDocs[0].CURR_SCANNED_UPLOAD}}</td>
+                        <td>{{this.ScanningDocs[0].PREV_SCANNED_UPLOAD}}</td>
+                        <td>{{absValue(this.ScanningDocs[0].POP_SCANNED_UPLOAD)}}
+                          <!-- <i style="font-size:20px; vertical-align: middle;" class="fa fa-caret-down"></i> {{rec.POP_PDF_TIFF}}</td> -->
+                          <i class="fa fa-caret-up" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_SCANNED_UPLOAD < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-caret-down" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_SCANNED_UPLOAD > 0"
+                            style="font-weight:bold"></i>
+                          <i class="fa fa-minus" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_SCANNED_UPLOAD == 0" style="font-weight:bold"></i>
+                          <td>
+                            <svg height="20" width="20">
+                              <circle *ngIf="this.ScanningDocs[0].RQ_SCANNED_UPLOAD == 0 || this.ScanningDocs[0].RQ_SCANNED_UPLOAD  == 1 || this.ScanningDocs[0].RQ_SCANNED_UPLOAD  == 2"
+                                cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green" />
+                              <circle *ngIf="this.ScanningDocs[0].RQ_SCANNED_UPLOAD == 3 || this.ScanningDocs[0].RQ_SCANNED_UPLOAD  == 4" cx="12" cy="12" r="6" stroke="black"
+                                stroke-width="1" fill="#FFCC00" />
+                              <circle *ngIf="this.ScanningDocs[0].RQ_SCANNED_UPLOAD  == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red" />
+                            </svg>
+                          </td>
+                      </tr>
+                      <!-- <tr >
+                                  <td></td>
+                                  <td class="bold">Versioning Doc (Docs)</td>
+                                  <td>{{this.ScanningDocs[0].CURR_DOCUMENT_EDIT_COUNT}}</td>
+                                  <td>{{this.ScanningDocs[0].PREV_DOCUMENT_EDIT_COUNT}}</td>
+                                  <td>
+                                     <i class="fa fa-caret-up" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_DOCUMENT_EDIT > 0" style="font-weight:bold"></i>
+                                    <i class="fa fa-caret-down" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_DOCUMENT_EDIT < 0" style="font-weight:bold"></i>
+                                    <i class="fa fa-minus" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_DOCUMENT_EDIT == 0" style="font-weight:bold"></i>
+                                    <td >
+                                    <svg height="20" width="20">
+                                      <circle *ngIf="this.ScanningDocs[0].RQ_DOCUMENT_EDIT == 0 || this.ScanningDocs[0].RQ_DOCUMENT_EDIT  == 1 || this.ScanningDocs[0].RQ_DOCUMENT_EDIT  == 2" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green"/>
+                                      <circle *ngIf="this.ScanningDocs[0].RQ_DOCUMENT_EDIT == 3 || this.ScanningDocs[0].RQ_DOCUMENT_EDIT  == 4" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="#FFCC00" />
+                                      <circle *ngIf="this.ScanningDocs[0].RQ_DOCUMENT_EDIT  == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red" />
+                                    </svg>
+                                  </td>
+                                  </tr> -->
+                      <tr>
+                        <td></td>
+                        <td class="bold">Reindexed Doc (Docs)</td>
+                        <td>{{this.ScanningDocs[0].CURR_REINDEXED_DOC}}</td>
+                        <td>{{this.ScanningDocs[0].PREV_REINDEXED_DOC}}</td>
+                        <td>{{absValue(this.ScanningDocs[0].POP_REINDEXED_DOC)}}
+                          <i class="fa fa-caret-up" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_REINDEXED_DOC < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-caret-down" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_REINDEXED_DOC > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_REINDEXED_DOC == 0" style="font-weight:bold"></i>
+                          <!-- <i style="font-size:20px; vertical-align: middle;" class="fa fa-caret-down"></i> {{rec.POP_ENTITY}}</td> -->
+                          <td>
+                            <svg height="20" width="20">
+                              <circle *ngIf="this.ScanningDocs[0].RQ_REINDEXED_DOC == 0 || this.ScanningDocs[0].RQ_REINDEXED_DOC  == 1 || this.ScanningDocs[0].RQ_REINDEXED_DOC  == 2"
+                                cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green" />
+                              <circle *ngIf="this.ScanningDocs[0].RQ_REINDEXED_DOC == 3 || this.ScanningDocs[0].RQ_REINDEXED_DOC  == 4" cx="12" cy="12" r="6" stroke="black"
+                                stroke-width="1" fill="#FFCC00" />
+                              <circle *ngIf="this.ScanningDocs[0].RQ_REINDEXED_DOC  == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red" />
+                            </svg>
+                          </td>
+                      </tr>
+                      <!-- <tr>
+                                  <td></td>
+                                  <td class="bold">CATEGORY</td>
+                                  <td>{{this.ScanningDocs[0].CURR_CATEGORY_COUNT}}</td>
+                                  <td>{{this.ScanningDocs[0].PREV_CATEGORY_COUNT}}</td>
+                                  <td>
+                                      <i class="fa fa-caret-up" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_CATEGORY > 0" style="font-weight:bold"></i>
+                                      <i class="fa fa-caret-down" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_CATEGORY < 0" style="font-weight:bold"></i>
+                                      <i class="fa fa-minus" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_CATEGORY == 0" style="font-weight:bold"></i>
+                                    <i style="font-size:20px; vertical-align: middle;" class="fa fa-caret-down"></i> {{rec.POP_CATEGORY}}</td> 
+                                  <td >
+                                    <svg height="20" width="20">
+                                      <circle *ngIf="this.ScanningDocs[0].RQ_CATEGORY == 0 || this.ScanningDocs[0].RQ_CATEGORY  == 1 || this.ScanningDocs[0].RQ_CATEGORY  == 2" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green"/>
+                                      <circle *ngIf="this.ScanningDocs[0].RQ_CATEGORY == 3 || this.ScanningDocs[0].RQ_CATEGORY  == 4" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="#FFCC00" />
+                                      <circle *ngIf="this.ScanningDocs[0].RQ_CATEGORY  == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red" />
+                                    </svg>
+                                  </td>
+                                  </tr> 
+                                  <tr >
+                                  <td></td>
+                                  <td class="bold">AUTHORIZATIC</td>
+                                  <td>{{this.ScanningDocs[0].CURR_AUTHORIZATIC_COUNT}}</td>
+                                  <td>{{this.ScanningDocs[0].PREV_AUTHORIZATIC_COUNT}}</td>
+                                  <td>
+                                      <i class="fa fa-caret-up" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_AUTHORIZATIC > 0" style="font-weight:bold"></i>
+                                      <i class="fa fa-caret-down" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_AUTHORIZATIC < 0" style="font-weight:bold"></i>
+                                      <i class="fa fa-minus" style="font-size:20px; vertical-align: middle;" *ngIf="this.ScanningDocs[0].POP_AUTHORIZATIC == 0" style="font-weight:bold"></i>
+                                     <i style="font-size:20px; vertical-align: middle;" class="fa fa-caret-down"></i> {{rec.POP_AUTHORIZATIC}}</td> 
+                                  <td >
+                                    <svg height="20" width="20">
+                                      <circle *ngIf="this.ScanningDocs[0].RQ_AUTHORIZATIC == 0 || this.ScanningDocs[0].RQ_AUTHORIZATIC  == 1 || this.ScanningDocs[0].RQ_AUTHORIZATIC  == 2" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green"/>
+                                      <circle *ngIf="this.ScanningDocs[0].RQ_AUTHORIZATIC == 3 || this.ScanningDocs[0].RQ_AUTHORIZATIC  == 4" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="#FFCC00" />
+                                      <circle *ngIf="this.ScanningDocs[0].RQ_AUTHORIZATIC  == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red" />
+                                    </svg>
+                                  </td>
+                                  </tr> -->
+                    </tbody>
+
+                  </table>
+                </div>
+                <!-- First part of Scanning of Documents Ends Here -->
+                <!-- Second part of Scanning of Documents Starts Here -->
+                <div [ngClass]="(selectedBox === 'scanningDocs' ) ? 'col-lg-6': 'col-md-12'">
+                  <!-- Code for BarChart will go here -->
+                  <BarChart [data]="ScanningOfDocsBarChartData"></BarChart>
+                </div>
+                <!-- Second part of Scanning of Documents Ends Here -->
+              </div>
+            </div>
+          </div>
+          <div id="nameScreening" class="card" [ngClass]="{'hide' : nameScreeningFlagcard}">
+            <div class="card-header card-headerfilter">
+              Name Screening
+              <div (click)="toggleSelectedBox('nameScreening')" class="btn-maximize">
+                <div class="btn-maximize-child"></div>
+              </div>
+            </div>
+            <div class="card-body" style="padding: 5px;">
+              <table style="width:100%;text-align:center;">
+                <thead>
+                  <tr>
+                    <td></td>
+                    <td>YTD</td>
+                    <td>LP</td>
+                    <td>CP</td>
+                    <td>% Change</td>
+                    <td>RQ</td>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let rec of nameScreeningData">
+                        <td>REQUESTS</td>
+                        <td>{{this.nameScreeningData[0].YTD_VOLUME}}</td>
+                        <td>{{this.nameScreeningData[0].PREVIOUS_VOLUME}}</td>
+                        <td>{{this.nameScreeningData[0].CURRENT_VOLUME}}</td>
+                        <td>{{absValue(this.nameScreeningData[0].POP_PERC)}}
+                          <i class="fa fa-arrow-up" *ngIf="this.nameScreeningData[0].POP_PERC < 0" style="font-weight:bold"></i>
+                          <i class="fa fa-arrow-down" *ngIf="this.nameScreeningData[0].POP_PERC > 0" style="font-weight:bold"></i>
+                          <i class="fa fa-minus" *ngIf="this.nameScreeningData[0].POP_PERC == 0" style="font-weight:bold"></i>
+                      </td>
+                      <td>
+                        <svg height="20" width="20">
+                            <circle *ngIf="this.nameScreeningData[0].RQ == 0 || this.nameScreeningData[0].RQ  == 1 || this.nameScreeningData[0].RQ  == 2"
+                            cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="green" />
+                          <circle *ngIf="this.nameScreeningData[0].RQ == 3 || this.nameScreeningData[0].RQ  == 4" cx="12" cy="12" r="6"
+                            stroke="black" stroke-width="1" fill="#FFCC00" />
+                          <circle *ngIf="this.nameScreeningData[0].RQ  == 5" cx="12" cy="12" r="6" stroke="black" stroke-width="1" fill="red"
+                          />
+                        </svg>
+                      </td>
+                      </tr>
+                </tbody>
+              </table>
+              <!-- <lineChart (chartClickEvent)="chartClicked($event)" (chartHoverEvent)="chartHover($event)" [id]="line" [data]="NameScreeningLineChartData"
+                          id="LineChart1"></lineChart> -->
+
+              <BarChart [data]="NameScreeningBarChartData"></BarChart>
+
+              <!-- <ScaleChartRe [data]="NameScreeningScaleChartData"></ScaleChartRe>  -->
+            </div>
+          </div>
+        </div>
+        <!-- Parent Widget for remaining Ends -->
+        <!-- nikhil -->
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="my-container">
+      <ngx-loading [show]="isLoader"></ngx-loading>
+  </div> <div bsModal #AcctMaintModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a href="javascript:void(0)" (click)="xlsAcctMaint()"><img src="../assets/img/xls.png" style="width:35px; height:35px; position: absolute;right: 45px; top:10px;"></a>
+          <h4 class="modal-title">Account Maintainance Information</h4>
+          <button type="button" class="close" (click)="AcctMaintModal.hide();" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="answer table-responsive" style="max-height: 450px; overflow-y: auto;">
+            <acctMaint-datatable ></acctMaint-datatable>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="AcctMaintModal.hide();">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  <div bsModal #largeModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a href="javascript:void(0)" (click)="xlsTrade()"><img src="../assets/img/xls.png" style="width:35px; height:35px; position: absolute;right: 45px; top:10px;"></a>
+          <h4 class="modal-title">Web Enrollments</h4>
+          <button type="button" class="close" (click)="largeModal.hide();" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="answer table-responsive" style="max-height: 450px; overflow-y: auto;">
+            <chart-datatable ></chart-datatable>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="largeModal.hide();">Close</button>
+          <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- /.modal -->
+
+    <div bsModal #AccountOpeningModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="javascript:void(0)" (click)="xlsAccountOpening()"><img src="../assets/img/xls.png" style="width:35px; height:35px; position: absolute;right: 45px; top:10px;"></a>
+            <h4 class="modal-title">Account Opening Volume</h4>
+            <button type="button" class="close" (click)="AccountOpeningModal.hide();" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="answer table-responsive" style="max-height: 450px; overflow-y: auto;">
+              <!-- <chart-datatable ></chart-datatable> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="AccountOpeningModal.hide();">Close</button>
+            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+      <!-- /.modal -->

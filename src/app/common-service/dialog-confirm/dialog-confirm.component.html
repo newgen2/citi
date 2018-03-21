@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ title }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" *ngIf="!isTimeout">
+    {{ message }}
+  </div>
+  <div class="modal-body" *ngIf="isTimeout">
+    Your session will logout after {{ timeout - ticks }} seconds.<br>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="decline()" *ngIf="!isAlert">{{ btnCancelText }}</button>
+    <button type="button" class="btn btn-primary" (click)="accept()" *ngIf="!isTimeout">{{ btnOkText }}</button>
+    <span *ngIf="isTimeout"><a href="javascript:void(0);" (click)="accept()">Click here </a> to activate your session</span>
+  </div>

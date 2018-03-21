@@ -1,0 +1,54 @@
+{
+  "_from": "angular-user-idle",
+  "_id": "angular-user-idle@1.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-KWJHDnMeL1rLgqdVy1KlrimJoZuaC/BD2RoV17XMoOQ4+07r9wTw3X3bEfm4tUVSbarR5zYaAYp2f5A/0KZO/w==",
+  "_location": "/angular-user-idle",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "angular-user-idle",
+    "name": "angular-user-idle",
+    "escapedName": "angular-user-idle",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-user-idle/-/angular-user-idle-1.0.4.tgz",
+  "_shasum": "95266a128ad5cd09f1a2064923723768bb93d712",
+  "_spec": "angular-user-idle",
+  "_where": "D:\\Onboarding",
+  "author": {
+    "name": "Vasyl Efimenko",
+    "email": "rednez@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/rednez/angular-user-idle/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "User's idle service for Angular 4",
+  "homepage": "https://github.com/rednez/angular-user-idle#readme",
+  "keywords": [
+    "idle",
+    "angular4"
+  ],
+  "license": "MIT",
+  "main": "user-idle.umd.js1",
+  "name": "angular-user-idle",
+  "peerDependencies": {
+    "@angular/core": "^4.2.2",
+    "rxjs": "^5.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rednez/angular-user-idle.git"
+  },
+  "types": "user-idle.d.ts",
+  "version": "1.0.4"
+}

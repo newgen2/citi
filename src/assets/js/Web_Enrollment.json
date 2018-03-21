@@ -1,0 +1,488 @@
+{
+  "RESPONSE_CODE": 1,
+  "RESPONSE_MESSAGE": "",
+  "RESPONSE_DATA": [
+    {
+      "REGION": 1,
+      "FREQUENCY": [
+        {
+          "NAME": 1,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 1,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 0,
+                  "MNTH_1_VOLUME": 576,
+                  "MNTH_2_VOLUME": 485,
+                  "MNTH_3_VOLUME": 456,
+                  "MNTH_4_VOLUME": 454,
+                  "MNTH_5_VOLUME": 394,
+                  "MNTH_6_VOLUME": 548,
+                  "MNTH_7_VOLUME": 390,
+                  "MNTH_8_VOLUME": 418,
+                  "MNTH_9_VOLUME": 655,
+                  "MNTH_10_VOLUME": 278,
+                  "MNTH_11_VOLUME": 261,
+                  "MNTH_12_VOLUME": 492,
+                  "YTD_VOLUME": 669,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 1,
+                  "ACCT_TYPE_ID": 1
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 1,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 0,
+                  "MNTH_1_VOLUME": 0,
+                  "MNTH_2_VOLUME": 2,
+                  "MNTH_3_VOLUME": 0,
+                  "MNTH_4_VOLUME": 0,
+                  "MNTH_5_VOLUME": 0,
+                  "MNTH_6_VOLUME": 2,
+                  "MNTH_7_VOLUME": 0,
+                  "MNTH_8_VOLUME": 1,
+                  "MNTH_9_VOLUME": 2,
+                  "MNTH_10_VOLUME": 0,
+                  "MNTH_11_VOLUME": 0,
+                  "MNTH_12_VOLUME": 1,
+                  "YTD_VOLUME": 0,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 1,
+                  "ACCT_TYPE_ID": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 2,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 2,
+                  "CURRENT_VOLUME": 32,
+                  "PREVIOUS_VOLUME": 127,
+                  "MNTH_1_VOLUME": 576,
+                  "MNTH_2_VOLUME": 485,
+                  "MNTH_3_VOLUME": 456,
+                  "MNTH_4_VOLUME": 454,
+                  "MNTH_5_VOLUME": 394,
+                  "MNTH_6_VOLUME": 548,
+                  "MNTH_7_VOLUME": 390,
+                  "MNTH_8_VOLUME": 418,
+                  "MNTH_9_VOLUME": 655,
+                  "MNTH_10_VOLUME": 278,
+                  "MNTH_11_VOLUME": 261,
+                  "MNTH_12_VOLUME": 492,
+                  "YTD_VOLUME": 669,
+                  "RQ": 32,
+                  "POP_PERC": -26,
+                  "REGION_ID": 1,
+                  "ACCT_TYPE_ID": 1
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 2,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 0,
+                  "MNTH_1_VOLUME": 0,
+                  "MNTH_2_VOLUME": 2,
+                  "MNTH_3_VOLUME": 0,
+                  "MNTH_4_VOLUME": 0,
+                  "MNTH_5_VOLUME": 0,
+                  "MNTH_6_VOLUME": 2,
+                  "MNTH_7_VOLUME": 0,
+                  "MNTH_8_VOLUME": 1,
+                  "MNTH_9_VOLUME": 2,
+                  "MNTH_10_VOLUME": 0,
+                  "MNTH_11_VOLUME": 0,
+                  "MNTH_12_VOLUME": 1,
+                  "YTD_VOLUME": 0,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 1,
+                  "ACCT_TYPE_ID": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 4,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 4,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 5246,
+                  "MNTH_1_VOLUME": 576,
+                  "MNTH_2_VOLUME": 485,
+                  "MNTH_3_VOLUME": 456,
+                  "MNTH_4_VOLUME": 454,
+                  "MNTH_5_VOLUME": 394,
+                  "MNTH_6_VOLUME": 548,
+                  "MNTH_7_VOLUME": 390,
+                  "MNTH_8_VOLUME": 418,
+                  "MNTH_9_VOLUME": 655,
+                  "MNTH_10_VOLUME": 278,
+                  "MNTH_11_VOLUME": 261,
+                  "MNTH_12_VOLUME": 492,
+                  "YTD_VOLUME": 669,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 1,
+                  "ACCT_TYPE_ID": 1
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 4,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 9,
+                  "MNTH_1_VOLUME": 0,
+                  "MNTH_2_VOLUME": 2,
+                  "MNTH_3_VOLUME": 0,
+                  "MNTH_4_VOLUME": 0,
+                  "MNTH_5_VOLUME": 0,
+                  "MNTH_6_VOLUME": 2,
+                  "MNTH_7_VOLUME": 0,
+                  "MNTH_8_VOLUME": 1,
+                  "MNTH_9_VOLUME": 2,
+                  "MNTH_10_VOLUME": 0,
+                  "MNTH_11_VOLUME": 0,
+                  "MNTH_12_VOLUME": 1,
+                  "YTD_VOLUME": 0,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 1,
+                  "ACCT_TYPE_ID": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 3,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 3,
+                  "CURRENT_VOLUME": 93,
+                  "PREVIOUS_VOLUME": 576,
+                  "MNTH_1_VOLUME": 576,
+                  "MNTH_2_VOLUME": 485,
+                  "MNTH_3_VOLUME": 456,
+                  "MNTH_4_VOLUME": 454,
+                  "MNTH_5_VOLUME": 394,
+                  "MNTH_6_VOLUME": 548,
+                  "MNTH_7_VOLUME": 390,
+                  "MNTH_8_VOLUME": 418,
+                  "MNTH_9_VOLUME": 655,
+                  "MNTH_10_VOLUME": 278,
+                  "MNTH_11_VOLUME": 261,
+                  "MNTH_12_VOLUME": 492,
+                  "YTD_VOLUME": 669,
+                  "RQ": 31,
+                  "POP_PERC": -13,
+                  "REGION_ID": 1,
+                  "ACCT_TYPE_ID": 1
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 3,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 0,
+                  "MNTH_1_VOLUME": 0,
+                  "MNTH_2_VOLUME": 2,
+                  "MNTH_3_VOLUME": 0,
+                  "MNTH_4_VOLUME": 0,
+                  "MNTH_5_VOLUME": 0,
+                  "MNTH_6_VOLUME": 2,
+                  "MNTH_7_VOLUME": 0,
+                  "MNTH_8_VOLUME": 1,
+                  "MNTH_9_VOLUME": 2,
+                  "MNTH_10_VOLUME": 0,
+                  "MNTH_11_VOLUME": 0,
+                  "MNTH_12_VOLUME": 1,
+                  "YTD_VOLUME": 0,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 1,
+                  "ACCT_TYPE_ID": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "REGION": 2,
+      "FREQUENCY": [
+        {
+          "NAME": 1,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 1,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 0,
+                  "MNTH_1_VOLUME": 93,
+                  "MNTH_2_VOLUME": 95,
+                  "MNTH_3_VOLUME": 80,
+                  "MNTH_4_VOLUME": 89,
+                  "MNTH_5_VOLUME": 69,
+                  "MNTH_6_VOLUME": 112,
+                  "MNTH_7_VOLUME": 94,
+                  "MNTH_8_VOLUME": 76,
+                  "MNTH_9_VOLUME": 129,
+                  "MNTH_10_VOLUME": 74,
+                  "MNTH_11_VOLUME": 57,
+                  "MNTH_12_VOLUME": 65,
+                  "YTD_VOLUME": 103,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 2,
+                  "ACCT_TYPE_ID": 1
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 1,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 0,
+                  "MNTH_1_VOLUME": 0,
+                  "MNTH_2_VOLUME": 0,
+                  "MNTH_3_VOLUME": 0,
+                  "MNTH_4_VOLUME": 0,
+                  "MNTH_5_VOLUME": 0,
+                  "MNTH_6_VOLUME": 0,
+                  "MNTH_7_VOLUME": 0,
+                  "MNTH_8_VOLUME": 0,
+                  "MNTH_9_VOLUME": 0,
+                  "MNTH_10_VOLUME": 0,
+                  "MNTH_11_VOLUME": 0,
+                  "MNTH_12_VOLUME": 0,
+                  "YTD_VOLUME": 0,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 2,
+                  "ACCT_TYPE_ID": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 2,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 2,
+                  "CURRENT_VOLUME": 5,
+                  "PREVIOUS_VOLUME": 16,
+                  "MNTH_1_VOLUME": 93,
+                  "MNTH_2_VOLUME": 95,
+                  "MNTH_3_VOLUME": 80,
+                  "MNTH_4_VOLUME": 89,
+                  "MNTH_5_VOLUME": 69,
+                  "MNTH_6_VOLUME": 112,
+                  "MNTH_7_VOLUME": 94,
+                  "MNTH_8_VOLUME": 76,
+                  "MNTH_9_VOLUME": 129,
+                  "MNTH_10_VOLUME": 74,
+                  "MNTH_11_VOLUME": 57,
+                  "MNTH_12_VOLUME": 65,
+                  "YTD_VOLUME": 103,
+                  "RQ": 5,
+                  "POP_PERC": -56,
+                  "REGION_ID": 2,
+                  "ACCT_TYPE_ID": 1
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 2,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 0,
+                  "MNTH_1_VOLUME": 0,
+                  "MNTH_2_VOLUME": 0,
+                  "MNTH_3_VOLUME": 0,
+                  "MNTH_4_VOLUME": 0,
+                  "MNTH_5_VOLUME": 0,
+                  "MNTH_6_VOLUME": 0,
+                  "MNTH_7_VOLUME": 0,
+                  "MNTH_8_VOLUME": 0,
+                  "MNTH_9_VOLUME": 0,
+                  "MNTH_10_VOLUME": 0,
+                  "MNTH_11_VOLUME": 0,
+                  "MNTH_12_VOLUME": 0,
+                  "YTD_VOLUME": 0,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 2,
+                  "ACCT_TYPE_ID": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 4,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 4,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 1049,
+                  "MNTH_1_VOLUME": 93,
+                  "MNTH_2_VOLUME": 95,
+                  "MNTH_3_VOLUME": 80,
+                  "MNTH_4_VOLUME": 89,
+                  "MNTH_5_VOLUME": 69,
+                  "MNTH_6_VOLUME": 112,
+                  "MNTH_7_VOLUME": 94,
+                  "MNTH_8_VOLUME": 76,
+                  "MNTH_9_VOLUME": 129,
+                  "MNTH_10_VOLUME": 74,
+                  "MNTH_11_VOLUME": 57,
+                  "MNTH_12_VOLUME": 65,
+                  "YTD_VOLUME": 103,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 2,
+                  "ACCT_TYPE_ID": 1
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 4,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 0,
+                  "MNTH_1_VOLUME": 0,
+                  "MNTH_2_VOLUME": 0,
+                  "MNTH_3_VOLUME": 0,
+                  "MNTH_4_VOLUME": 0,
+                  "MNTH_5_VOLUME": 0,
+                  "MNTH_6_VOLUME": 0,
+                  "MNTH_7_VOLUME": 0,
+                  "MNTH_8_VOLUME": 0,
+                  "MNTH_9_VOLUME": 0,
+                  "MNTH_10_VOLUME": 0,
+                  "MNTH_11_VOLUME": 0,
+                  "MNTH_12_VOLUME": 0,
+                  "YTD_VOLUME": 0,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 2,
+                  "ACCT_TYPE_ID": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "NAME": 3,
+          "ACCOUNT_TYPE": [
+            {
+              "TYPE": 1,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 3,
+                  "CURRENT_VOLUME": 10,
+                  "PREVIOUS_VOLUME": 93,
+                  "MNTH_1_VOLUME": 93,
+                  "MNTH_2_VOLUME": 95,
+                  "MNTH_3_VOLUME": 80,
+                  "MNTH_4_VOLUME": 89,
+                  "MNTH_5_VOLUME": 69,
+                  "MNTH_6_VOLUME": 112,
+                  "MNTH_7_VOLUME": 94,
+                  "MNTH_8_VOLUME": 76,
+                  "MNTH_9_VOLUME": 129,
+                  "MNTH_10_VOLUME": 74,
+                  "MNTH_11_VOLUME": 57,
+                  "MNTH_12_VOLUME": 65,
+                  "YTD_VOLUME": 103,
+                  "RQ": 3,
+                  "POP_PERC": 24,
+                  "REGION_ID": 2,
+                  "ACCT_TYPE_ID": 1
+                }
+              ]
+            },
+            {
+              "TYPE": 2,
+              "DATA": [
+                {
+                  "FREQUENCY_ID": 3,
+                  "CURRENT_VOLUME": 0,
+                  "PREVIOUS_VOLUME": 0,
+                  "MNTH_1_VOLUME": 0,
+                  "MNTH_2_VOLUME": 0,
+                  "MNTH_3_VOLUME": 0,
+                  "MNTH_4_VOLUME": 0,
+                  "MNTH_5_VOLUME": 0,
+                  "MNTH_6_VOLUME": 0,
+                  "MNTH_7_VOLUME": 0,
+                  "MNTH_8_VOLUME": 0,
+                  "MNTH_9_VOLUME": 0,
+                  "MNTH_10_VOLUME": 0,
+                  "MNTH_11_VOLUME": 0,
+                  "MNTH_12_VOLUME": 0,
+                  "YTD_VOLUME": 0,
+                  "RQ": 0,
+                  "POP_PERC": 0,
+                  "REGION_ID": 2,
+                  "ACCT_TYPE_ID": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+// Here you can add other styles
+.dataTables_filter > label {margin-bottom: 5px; }
+.search-field, .dataTables_filter > label > input{
+	border: 1px solid #dbdbda;
+	border-radius: 100px;
+	//padding: 9px 25px 9px 37px!important;
+	height: 28px!important;
+	font-family: roboto;
+	font-weight: 400;
+	font-size: 13px;
+  }
+  .search-icon{
+	content: "";
+	position: absolute;
+	width: 17px;
+	height: 18px;
+	margin-top: 10px;
+	margin-left: 10px;
+	z-index: 999;
+	background: url(../img/ic-search.png) no-repeat;
+	background-size: contain;
+  }
+.search-icon1 {
+    display: none;
+}
+  .btn-primary{
+	height: 36px;
+	background: #802260!important;
+	border: 0;
+	border-radius: 100px;
+	font-family: roboto;
+	font-weight: 500;
+	font-size: 13px;
+	color: #fff;
+	text-transform: uppercase;
+	box-shadow: none;
+	cursor: pointer;
+  }
+  .unsubscribeSearchPan {
+	width: 15%;
+	display: inline-block;
+	position: relative;
+	padding-left: 5px;
+}
+
+.unsubscribeSearchpop {
+	width: 20%;
+	display: inline-block;
+	position: relative;
+	padding-left: 5px;
+}
+
+.unsubscribeAddpop {
+	width: 33%;
+	display: inline-block;
+	position: relative;
+	padding-left: 15px;
+	//readonly :true;
+}
+.numericCol{
+  text-align:right;
+}
+.table th {background-color: #ecf0f5; color:#000000; border-bottom: 1px solid #fbfafa !important;}
+.table.dataTable thead th,
+table.dataTable thead td,
+table.dataTable tfoot th {
+  font-weight: 500 !important;
+  vertical-align: middle;
+}
+
+.table.dataTable thead th,
+table.dataTable thead td {
+  padding: 2px 10px;
+	font-size: 11px;
+	padding-right:18px; 
+}
+
+.table.dataTable tbody td {
+  padding: 2px 10px !important;
+}
+
+.table.dataTable tbody {
+  font-size: 10px;
+}
+
+
+.active {
+	/*background: lightgray;*/
+	background: #3090C7 !important;
+	color: #fff;
+}
+
+.active a {
+	color: cyan;
+}
+
+.active:hover td:not(:first-child) {
+	background-color: transparent !important;
+
+}
+
+.DetailButton {
+	background: none!important;
+	color: #20a8d8 !important;
+	border: none;
+	padding: 0!important;
+	font: inherit;
+	cursor: pointer;
+}
+
+.active .DetailButton {
+	background: none!important;
+	color: cyan !important;
+	border: none;
+	padding: 0!important;
+	font: inherit;
+	cursor: pointer;
+}
+
+.active .DetailButton[disabled] {
+	background: none!important;
+	color: #c4c0c0 !important;
+	border: none;
+	padding: 0!important;
+	font: inherit;
+	cursor: pointer;
+}
+
+.DetailButton[disabled] {
+	background: none!important;
+	color: #c4c0c0 !important;
+	border: none;
+	padding: 0!important;
+	font: inherit;
+	cursor: pointer;
+}
+.popover{	z-index: 1080 !important; }
+//.content-header {padding: 6px 15px 0 15px;}
+//.table th, .table td {padding: 0.55rem;}
+.dataTables_filter input[type="search"]:focus {
+	border-color: 'none';
+	outline: 0;
+}
+
+.icon-edit{
+	font-family: font-awesome;
+}
+.icon-edit::before{
+	content: "\f044";
+}
+svg {
+	font: 8px sans-serif;
+	//shape-rendering: crispEdges;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+}
+
+path.domain {
+	stroke: none;
+}
+
+.y .tick line {
+	stroke: #ddd;
+}
+.sector {
+cursor: pointer;
+}
+
+.legendpie:hover {cursor: pointer; text-decoration: underline;}
+
+.tooltipChart {
+position : absolute;
+z-index: 10;
+display: none;
+text-anchor: middle;
+font-size: 12px;
+font-weight: bold;
+}
+
+.d3-chart {width: 100%;	height: 100%;}		
+.d3-chart .axis path, .d3-chart .axis line { stroke: #999;}		
+.d3-chart .axis text {fill: #999;}
+
+
+
+// Onboarding Css
+.line { 
+	stroke: steelblue;
+	  stroke-width: 2;
+	  fill: none;
+  }
+  
+  linechart .axis path,
+  linechart .axis line {
+	  fill: none;
+	  stroke: grey;
+	  stroke-width: 1;
+	  //shape-rendering: crispEdges;
+  }
+  
+ 
+  linechart .label {
+	  position:absolute;
+  }
+  
+  linechart circle {
+	  cursor: pointer;
+	  fill: steelblue;
+  }
+  barchart svg path.domain { display: none !important; }
+
+  .modal-dialog {margin : 30px auto; min-width: 25%;}
+
+
+
+
+

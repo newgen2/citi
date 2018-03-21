@@ -1,0 +1,34 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" style="font-size:11px;">
+  <thead>
+    <tr *ngIf="countRows==6">
+    <th title="{{this.dyncolumn[0]}}" style="max-width: 15px !important">{{this.dyncolumn[0]}}</th>
+    <th title="{{this.dyncolumn[1]}}" style="max-width: 15px !important">{{this.dyncolumn[1]}}</th>
+    <th title="{{this.dyncolumn[2]}}" style="max-width: 15px !important">{{this.dyncolumn[2]}}</th>
+    <th title="{{this.dyncolumn[3]}}" style="max-width: 15px !important">{{this.dyncolumn[3]}}</th>
+    <th title="{{this.dyncolumn[4]}}" style="max-width: 15px !important">{{this.dyncolumn[4]}}</th>
+    <th title="{{this.dyncolumn[5]}}" style="max-width: 15px !important">{{this.dyncolumn[5]}}</th>
+      <!-- <th *ngFor="let rec of this.dyncolumn">{{rec}}</th> -->
+  </tr>
+  <tr *ngIf="countRows==8">
+  <th title="{{this.dyncolumn[0]}}" style="max-width: 15px !important">{{this.dyncolumn[0]}}</th>
+  <th title="{{this.dyncolumn[1]}}" style="max-width: 15px !important">{{this.dyncolumn[1]}}</th>
+  <th title="{{this.dyncolumn[2]}}" style="max-width: 15px !important">{{this.dyncolumn[2]}}</th>
+  <th title="{{this.dyncolumn[3]}}" style="max-width: 15px !important">{{this.dyncolumn[3]}}</th>
+  <th title="{{this.dyncolumn[4]}}" style="max-width: 15px !important">{{this.dyncolumn[4]}}</th>
+  <th title="{{this.dyncolumn[5]}}" style="max-width: 15px !important">{{this.dyncolumn[5]}}</th>
+  <th title="{{this.dyncolumn[6]}}" style="max-width: 15px !important">{{this.dyncolumn[6]}}</th>
+  <th title="{{this.dyncolumn[7]}}" style="max-width: 15px !important">{{this.dyncolumn[7]}}</th>
+    <!-- <th *ngFor="let rec of this.dyncolumn">{{rec}}</th> -->
+</tr>
+</thead>
+<tbody >
+  <tr *ngFor="let rec of rowData">
+    <td >{{rec.CHANGED_DT}}</td>
+    <td>{{rec.RELN_NBR}}</td>
+    <td>{{rec.User_Id}}</td>
+    <td >{{rec.MARKET_RGN_CD}}</td>
+    <td>{{rec.MEMBER_TYPE}}</td>
+    <td>{{rec.LEAD_BANKER_ID}}</td>
+    </tr>
+  </tbody>
+</table>

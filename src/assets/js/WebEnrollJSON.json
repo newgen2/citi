@@ -1,0 +1,44 @@
+[
+{
+    "MBR_ID": "EM200026325",
+    "FORM_TYPE": "Web Enrollment Form",
+    "ENRL_FORM_STA_DESC": "Approved",
+    "MAKER_ID": "1010785184",
+    "MAKER_DT": "02/06/2018 18:19:02",
+    "LAST_UPD_DT": "02/06/2018 18:19:02",
+    "LAST_UPD_BY": "1010785184",
+    "CHECKED_DT": "02/06/2018 18:19:02",
+    "CHECKER_ID": "1010785184",
+    "ENROLLED_ACCT_COUNT": "0",
+    "MEMBER_TYPE": "I",
+    "EXPN_MKT_RGN_CD": "LA"
+  },
+  {
+    "MBR_ID": "EM2000263253",
+    "FORM_TYPE": "Web Enrollment Form",
+    "ENRL_FORM_STA_DESC": "Approved",
+    "MAKER_ID": "1010785184",
+    "MAKER_DT": "02/06/2018 18:19:02",
+    "LAST_UPD_DT": "02/02/2018 18:19:02",
+    "LAST_UPD_BY": "1010785184",
+    "CHECKED_DT": "02/07/2018 18:19:02",
+    "CHECKER_ID": "1010785184",
+    "ENROLLED_ACCT_COUNT": "0",
+    "MEMBER_TYPE": "I",
+    "EXPN_MKT_RGN_CD": "US"
+  },
+  {
+    "MBR_ID": "EM200026325",
+    "FORM_TYPE": "Web Enrollment Form",
+    "ENRL_FORM_STA_DESC": "Approved",
+    "MAKER_ID": "1010785184",
+    "MAKER_DT": "02/06/2018 18:19:02",
+    "LAST_UPD_DT": "02/06/2018 18:19:02",
+    "LAST_UPD_BY": "1010785184",
+    "CHECKED_DT": "02/06/2018 18:19:02",
+    "CHECKER_ID": "1010785184",
+    "ENROLLED_ACCT_COUNT": "0",
+    "MEMBER_TYPE": "I",
+    "EXPN_MKT_RGN_CD": "LA"
+  }
+]

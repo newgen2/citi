@@ -1,0 +1,61 @@
+ <style>
+    .card-header {
+        font-weight: bold;
+        color: rgb(114, 114, 114);
+    }
+
+    .reportlinks {
+        padding-left: 10px;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                Reports
+            </div>
+            <div class="card-body">
+                <div class="reportlinks">
+                    <p  *ngFor = "let report of ReportSource" style="margin:0px !important">
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                        <a href="javascript:void(0)" (click)="getData(report)"> {{report.name}}</a>
+                    </i>
+                    </p>
+                    <!-- <br>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                        <a href="javascript:void()" (click)="getData('MF Onshore RF/DF Failed')"> MF Onshore RF/DF Failed</a>
+                    </i>
+                    <br>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                        <a href="javascript:void()" (click)="getData('Global Failed')"> Global Failed</a>
+                    </i>
+                    <br>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                        <a href="javascript:void()" (click)="getData('Global Pending')"> Global Pending</a>
+                    </i>
+                    <br>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                        <a href="javascript:void()" (click)="getData('Global Incomplete')"> Global Incomplete</a>
+                    </i>
+                    <br>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                        <a href="javascript:void()" (click)="getData('Domestic Incomplete (Confirm)')"> Domestic Incomplete (Confirm)</a>
+                    </i>
+                    <br>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                        <a href="javascript:void()" (click)="getData('Domestic Incomplete (Swift)')"> Domestic Incomplete (Swift)</a>
+                    </i>
+                    <br>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                        <a href="javascript:void()" (click)="getData('Domestic Purchase/Sell Failed')"> Domestic Purchase/Sell Failed</a>
+                    </i>
+                    <br>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                        <a href="javascript:void()" (click)="getData('Domestic RF/DF Failed')"> Domestic RF/DF Failed</a>
+                    </i>
+                    <br> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

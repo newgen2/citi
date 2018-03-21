@@ -1,0 +1,83 @@
+{
+	"settlementLocation": [{
+		"name": "Clear Stream",
+		"checked": true,
+		"color": "#55a975"
+	}, {
+		"name": "DTC",
+		"checked": true,
+		"color": "#3350aa"
+	}, {
+		"name": "FED",
+		"checked": true,
+		"color": "#d5b168"
+	}, {
+		"name": "Global",
+		"checked": true,
+		"color": "#3c8dbc"
+	}, {
+		"name": "MF-OFF",
+		"checked": true,
+		"color": "#bb3ca0"
+	}, {
+		"name": "MF-DOM",
+		"checked": true,
+		"color": "#adbb3c"
+	}],
+	"TradeStatus": [{
+		"name": "Failed",
+		"checked": true,
+		"color": "#e60e0e"
+	}, {
+		"name": "Pending",
+		"checked": true,
+		"color": "#ffc200"
+	}, {
+		"name": "Incomplete",
+		"checked": true,
+		"color": "#FFFF00"
+	}],
+	"TradeType": [{
+		"name": "Sell",
+		"checked": true,
+		"color": "#c012de"
+	}, {
+		"name": "BUY",
+		"checked": true,
+		"color": "#20c4c5"
+	}, {
+		"name": "Receive Free",
+		"checked": true,
+		"color": "#4484f1"
+	}, {
+		"name": "Deliver Free",
+		"checked": true,
+		"color": "#85f144"
+	}],
+	"RiskType": [{
+		"name": "Low",
+		"value": "0,1,2",
+		"checked": true,
+		"color": "green"
+	}, {
+		"name": "Med",
+		"value": "3,4",
+		"checked": true,
+		"color": "#FFCC00"
+	}, {
+		"name": "High",
+		"value": "5",
+		"checked": true,
+		"color": "red"
+	}],
+	"Aging": [{
+		"name": "0-3 Days",
+		"color": "#fd9a9a"
+	}, {
+		"name": "4-7 Days",
+		"color": "#ff5d5d"
+	}, {
+		"name": ">7 Days",
+		"color": "#FF0000"
+	}]
+}

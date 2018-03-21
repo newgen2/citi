@@ -1,0 +1,80 @@
+{
+	"REGION": [{
+		"NAME": "NAM",
+		"VALUE" : "1"
+	}, {
+		"NAME": "LATAM",
+		"VALUE" : "2"
+	}],
+	"FREQUENCY": [{
+		"NAME": "Daily",
+		"VALUE" : "1"
+	}, {
+		"NAME": "Weekly",
+		"VALUE" : "2"
+	}, {
+		"NAME": "Monthly",
+		"VALUE" : "3"
+	}, {
+		"NAME": "Yearly",
+		"VALUE" : "4"
+	}],
+	"PRODUCTS": [{
+		"NAME": "All",
+		"VALUE" : "12"
+	}, {
+		"NAME": "Banking",
+		"VALUE" : "1"
+	}, {
+		"NAME": "CIM Managed Investments",
+		"VALUE" : "2"
+	},{
+		"NAME": "Pershing NAM Managed Investment",
+		"VALUE" : "3"
+	},{
+		"NAME": "Pershing LATAM Managed Investment",
+		"VALUE" : "4"
+	}, {
+		"NAME": "Pershing APAC Managed Investment",
+		"VALUE" : "5"
+	}, {
+		"NAME": "Pershing EMEA Managed Investment",
+		"VALUE" : "6"
+	}, {
+		"NAME": "Flexcube Banking STP And Manual",
+		"VALUE" : "7"
+	},{
+		"NAME": "Capital Markets",
+		"VALUE" : "8"
+	}, {
+		"NAME": "Investor (Custody)",
+		"VALUE" : "9"
+	}, {
+		"NAME": "Preferred Custody",
+		"VALUE" : "10"
+	}, {
+		"NAME": "Trust",
+		"VALUE" : "11"
+	}],
+	"ACCOUNT_TYPE": [
+		{
+			"NAME": "Individual",
+			"VALUE" : "1"
+		}, {
+			"NAME": "Entity",
+			"VALUE" : "2"
+		}
+	],
+	"CLIENT_TYPE": [
+		{
+			"NAME": "New",
+			"VALUE" : "1"
+		}, {
+			"NAME": "Existing",
+			"VALUE" : "2"
+		}, {
+			"NAME": "All",
+			"VALUE" : "3"
+		}
+	]
+}

@@ -1,0 +1,180 @@
+<style>
+    .DetailButton {
+    background: none!important;
+    color: #20a8d8 !important;
+    border: none;
+    padding: 0!important;
+    font: inherit;
+    cursor: pointer;
+  }
+  th{
+    max-width: 30px !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+  }
+
+  .red {
+    font-weight: bold;
+    background-color: red !important;
+  }
+
+  /*5*/
+
+  .lightgreen {
+    font-weight: bold;
+    background-color: rgb(109, 236, 109) !important;
+  }
+
+  /*1*/
+
+  .yellow {
+    font-weight: bold;
+    background-color: yellow !important;
+  }
+
+  /*3*/
+
+  .amber {
+    font-weight: bold;
+    background-color: #FFC200 !important;
+  }
+
+  /*4*/
+
+  .green {
+    font-weight: bold;
+    background-color: green !important;
+  }
+
+  /*2*/
+
+  .normal {
+    color: 0;
+    background-color: greenyellow !important;
+  }
+
+  .DetailButton[disabled] {
+    background: none!important;
+    color: #c4c0c0 !important;
+    border: none;
+    padding: 0!important;
+    font: inherit;
+    cursor: pointer;
+  }
+</style>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" style="font-size:11px;">
+  <thead>
+    <tr *ngIf="columnData[12] == 'Location' && popupDetailJSON[0].DASHBOARD_STATUS == 'Failed'">
+      <th title="{{columnData[0]}}" style="max-width: 15px !important">{{columnData[0]}}</th>
+      <th title="{{columnData[1]}}" [ngStyle]="dynColumnWidth[1]">{{columnData[1]}}</th>
+      <th title="{{columnData[2]}}" [ngStyle]="dynColumnWidth[2]">{{columnData[2]}}</th>
+      <th title="{{columnData[3]}}" [ngStyle]="dynColumnWidth[3]">{{columnData[3]}}</th>
+      <th title="{{columnData[4]}}" [ngStyle]="dynColumnWidth[4]">{{columnData[4]}}</th>
+      <th title="{{columnData[5]}}" [ngStyle]="dynColumnWidth[5]">{{columnData[5]}}</th>
+      <th title="{{columnData[6]}}" [ngStyle]="dynColumnWidth[6]">{{columnData[6]}}</th>
+      <th title="{{columnData[7]}}" class="dt-right" [ngStyle]="dynColumnWidth[7]">{{columnData[7]}}</th>
+      <th title="{{columnData[8]}}" class="dt-right" [ngStyle]="dynColumnWidth[8]">{{columnData[8]}}</th>
+      <th title="{{columnData[9]}}" [ngStyle]="dynColumnWidth[9]">{{columnData[9]}}</th>
+      <th title="{{columnData[10]}}" [ngStyle]="dynColumnWidth[10]">{{columnData[10]}}</th>
+      <th title="{{columnData[11]}}" class="dt-right" [ngStyle]="dynColumnWidth[11]">{{columnData[11]}}</th>
+      <th title="{{columnData[12]}}" [ngStyle]="dynColumnWidth[12]">{{columnData[12]}}</th>
+      <th *ngIf="addCommentAppConfig == 1 || sendEmailAppConfig == 1 || showDetailsAppConfig == 1">Action</th>
+  </tr>
+  <tr *ngIf="columnData[12] != 'Location'  && popupDetailJSON[0].DASHBOARD_STATUS == 'Failed'">
+      <th  title="{{columnData[0]}}" style="max-width: 15px !important">{{columnData[0]}}</th>
+      <th  title="{{columnData[1]}}" [ngStyle]="dynColumnWidth[1]">{{columnData[1]}}</th>
+      <th  title="{{columnData[2]}}" [ngStyle]="dynColumnWidth[2]">{{columnData[2]}}</th>
+      <th  title="{{columnData[3]}}" [ngStyle]="dynColumnWidth[3]">{{columnData[3]}}</th>
+      <th  title="{{columnData[4]}}" [ngStyle]="dynColumnWidth[4]">{{columnData[4]}}</th>
+      <th  title="{{columnData[5]}}" [ngStyle]="dynColumnWidth[5]">{{columnData[5]}}</th>
+      <th  title="{{columnData[6]}}" [ngStyle]="dynColumnWidth[6]">{{columnData[6]}}</th>
+      <th  title="{{columnData[7]}}" class="dt-right" [ngStyle]="dynColumnWidth[7]">{{columnData[7]}}</th>
+      <th  title="{{columnData[8]}}" class="dt-right" [ngStyle]="dynColumnWidth[8]">{{columnData[8]}}</th>
+      <th  title="{{columnData[9]}}" [ngStyle]="dynColumnWidth[9]">{{columnData[9]}}</th>
+      <th title="{{columnData[10]}}" [ngStyle]="dynColumnWidth[10]">{{columnData[10]}}</th>
+      <th title="{{columnData[11]}}" class="dt-right" [ngStyle]="dynColumnWidth[11]">{{columnData[11]}}</th>
+      <th *ngIf="addCommentAppConfig == 1 || sendEmailAppConfig == 1 || showDetailsAppConfig == 1">Action</th>
+  </tr>
+ <tr *ngIf="columnData[12] == 'Location' && popupDetailJSON[0].DASHBOARD_STATUS != 'Failed'">
+      <th title="{{columnData[0]}}" style="max-width: 15px !important">{{columnData[0]}}</th>
+      
+      <th title="{{columnData[2]}}" [ngStyle]="dynColumnWidth[2]">{{columnData[2]}}</th>
+      <th title="{{columnData[3]}}" [ngStyle]="dynColumnWidth[3]">{{columnData[3]}}</th>
+      <th title="{{columnData[4]}}" [ngStyle]="dynColumnWidth[4]">{{columnData[4]}}</th>
+      <th title="{{columnData[5]}}" [ngStyle]="dynColumnWidth[5]">{{columnData[5]}}</th>
+      <th title="{{columnData[6]}}" [ngStyle]="dynColumnWidth[6]">{{columnData[6]}}</th>
+      <th title="{{columnData[7]}}" class="dt-right" [ngStyle]="dynColumnWidth[7]">{{columnData[7]}}</th>
+      <th title="{{columnData[8]}}" class="dt-right" [ngStyle]="dynColumnWidth[8]">{{columnData[8]}}</th>
+      <th title="{{columnData[9]}}" [ngStyle]="dynColumnWidth[9]">{{columnData[9]}}</th>
+      <th title="{{columnData[10]}}" [ngStyle]="dynColumnWidth[10]">{{columnData[10]}}</th>
+      <th title="{{columnData[11]}}" class="dt-right" [ngStyle]="dynColumnWidth[11]">{{columnData[11]}}</th>
+      <th title="{{columnData[12]}}" [ngStyle]="dynColumnWidth[12]">{{columnData[12]}}</th>
+      <th *ngIf="addCommentAppConfig == 1 || sendEmailAppConfig == 1 || showDetailsAppConfig == 1">Action</th>
+  </tr>
+  <tr *ngIf="columnData[12] != 'Location'  && popupDetailJSON[0].DASHBOARD_STATUS != 'Failed'">
+      <th  title="{{columnData[0]}}" style="max-width: 15px !important">{{columnData[0]}}</th>
+      
+      <th  title="{{columnData[2]}}" [ngStyle]="dynColumnWidth[2]">{{columnData[2]}}</th>
+      <th  title="{{columnData[3]}}" [ngStyle]="dynColumnWidth[3]">{{columnData[3]}}</th>
+      <th  title="{{columnData[4]}}" [ngStyle]="dynColumnWidth[4]">{{columnData[4]}}</th>
+      <th  title="{{columnData[5]}}" [ngStyle]="dynColumnWidth[5]">{{columnData[5]}}</th>
+      <th  title="{{columnData[6]}}" [ngStyle]="dynColumnWidth[6]">{{columnData[6]}}</th>
+      <th  title="{{columnData[7]}}" class="dt-right" [ngStyle]="dynColumnWidth[7]">{{columnData[7]}}</th>
+      <th  title="{{columnData[8]}}" class="dt-right" [ngStyle]="dynColumnWidth[8]">{{columnData[8]}}</th>
+      <th  title="{{columnData[9]}}" [ngStyle]="dynColumnWidth[9]">{{columnData[9]}}</th>
+      <th title="{{columnData[10]}}" class="dt-right" [ngStyle]="dynColumnWidth[10]">{{columnData[10]}}</th>
+      <th title="{{columnData[11]}}" [ngStyle]="dynColumnWidth[11]">{{columnData[11]}}</th>
+      <th *ngIf="addCommentAppConfig == 1 || sendEmailAppConfig == 1 || showDetailsAppConfig == 1">Action</th>
+  </tr>
+</thead>
+<tbody >
+    <tr *ngFor="let rec of rowData; let i = index">
+            <td [ngClass]="rec['RQ Rating'] == 5 ? 'red' : rec['RQ Rating'] == 0 ? 'green' : rec['RQ Rating'] == 1 ? 'green' : rec['RQ Rating'] == 2 ? 'green' : rec['RQ Rating'] == 3 ? 'amber' : rec['RQ Rating'] == 4 ? 'amber' : 'normal'">
+            <span style="display:none;">{{rec['RQ Rating']}}</span>
+            </td>
+            <td *ngIf="popupDetailJSON[0].DASHBOARD_STATUS == 'Failed'">{{rec['Ageing']}}</td>
+        <td [ngClass]="key == 'Shares' ||  key == 'Price' ||  key == 'Principal Amount' ||  key == 'Net + AI Amount' ||  key == 'Net Trade Amount' ||  key == 'Accrued Interest Amount' ? 'dt-right' : 'dt-center'" *ngFor="let key of rowKey | slice:2:20" style="max-width: 30px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="{{rec[key]}}">
+           {{ rec[key] }}
+        </td>
+      <td *ngIf="addCommentAppConfig == 1 || sendEmailAppConfig == 1 || showDetailsAppConfig == 1" align="center">
+        <button   *ngIf="addCommentAppConfig == 1" [disabled]="(popupDetailJSON[i].DASHBOARD_STATUS != 'Failed')||(commentFlag == 0)" class="DetailButton" type="button" (click)="addComment($event,i)"
+            style="margin-left:2px"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+        
+        <button *ngIf="showDetailsAppConfig == 1" class="DetailButton" type="button" (click)="loadPopDetailsModel(i)"
+        ><i class="fa fa-file-text" aria-hidden="true"></i>
+        </button>
+        <a *ngIf="sendEmailAppConfig == 1" href="javascript:void(0)" (click)="btnSendEmail_click($event,i, rec)" title="Email" ng-disabled="true">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        </a>
+      </td>
+    
+  </tbody>
+</table>
+<div id="addCommentPop" class="modal-content" style="width:350px; display:none; position:absolute;">
+        <div class="modal-header" style="padding: 5px;">
+          <h4 class="modal-title">Comments</h4>
+        </div>
+        <div class="modal-body" style="padding: 0px;">
+          <textarea id ="commentTextArea" maxlength="100" ref-textarea style="width:100%" rows="5" #textArea></textarea>
+        </div>
+        <div class="modal-footer" style="padding: 0px;">
+          <button type="button" class="btn btn-link" (click)="textarea.value='';hideCommentPopUp()">Close</button>
+          <button type="button" class="btn btn-link" (click)="hideCommentPopUp();updateComment(textarea.value);textarea.value='';">Save changes</button>
+        </div>
+      </div>
+
+      <div  id="myEmailPop" class="modal-content" style="width:550px; padding:2px; display:none; position:absolute;">
+            <div class="modal-header" style="padding: 5px;">
+              <h4 class="modal-title">Email</h4>
+            </div>
+            <div class="modal-body" style="padding: 0px;">
+                <textarea [(ngModel)]="to" style="width:100%; padding:1px;" rows="1" placeholder="To:"></textarea>
+                <textarea [(ngModel)]="subject" style="width:100%; padding:1px;" rows="1" placeholder="Subject:"></textarea>
+                <textarea [(ngModel)]="message" style="width:100%; padding:1px;" rows="8" placeholder="Message"></textarea>
+              </div>
+            <div class="modal-footer" style="padding: 0px;">
+              <button type="button" class="btn btn-link" (click)="hideEmailPopUp();">Cancel</button>
+              <button type="button" class="btn btn-link" (click)="sendEmail(to,subject,message);">Send</button>
+            </div>
+          </div>

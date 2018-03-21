@@ -1,0 +1,881 @@
+<style>
+  label {
+    position: relative;
+    cursor: pointer;
+    font-size: 11px;
+    margin-bottom: 0rem;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    position: absolute;
+    right: 9000px;
+  }
+
+  /*Check box*/
+
+  input[type="checkbox"]+.label-text:before {
+    content: "\f096";
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    width: 1em;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+
+
+  input[type="checkbox"]:checked+.label-text:before {
+    /* content: "\f14a"; */
+    content: "\f046";
+    /* content: "\f0c8"; */
+    animation: effect 250ms ease-in;
+  }
+
+  input[type="checkbox"]:disabled+.label-text:before {
+    content: "\f0c8";
+    color: #ccc;
+  }
+
+  input:read-only {
+    background-color: #F1F1F1;
+  }
+
+  .stClearStream::before {
+    color: #55a975 !important;
+  }
+
+  .stDTC::before {
+    color: #3350aa !important;
+  }
+
+  .stFED::before {
+    color: #d5b168 !important;
+  }
+
+  .stGLOBAL::before {
+    color: #3c8dbc !important;
+  }
+
+  .stMFOFF::before {
+    color: #bb3ca0 !important;
+  }
+
+  .stMFDOM::before {
+    color: #adbb3c !important;
+  }
+
+  .statusFail::before {
+    color: #e60e0e !important;
+  }
+
+  .statusPending::before {
+    color: #ffc200 !important;
+  }
+
+  .stIncomplete::before {
+    color: #FFFF00 !important;
+  }
+
+  .totSell::before {
+    color: #c012de !important;
+  }
+
+  .totbuy::before {
+    color: #20c4c5 !important;
+  }
+
+  .totReceiveFree::before {
+    color: #4484f1 !important;
+  }
+
+  .totDeliveredFree::before {
+    color: #85f144 !important;
+  }
+
+  .riskNo::before {
+    color: green !important;
+  }
+
+  .riskLow::before {
+    color: lightgreen !important;
+  }
+
+  .riskMed::before {
+    color: yellow !important;
+  }
+
+  .riskHi::before {
+    color: #FFBF00 !important;
+  }
+
+  .riskVhi::before {
+    color: red !important;
+  }
+
+  /* #dashboardTbl {
+      max-height: 300px;
+    } */
+
+  @media (min-width: 576px) {
+    #dashboardTbl {
+      max-height: 10em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    #dashboardTbl {
+      max-height: 10.5em;
+    }
+  }
+
+  @media (min-width: 992px) {
+    #dashboardTbl {
+      max-height: 15.5em;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    #dashboardTbl {
+      max-height: 22.5em;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    #dashboardTbl {
+      min-height: 24.5em;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    #dashboardTbl {
+      max-height: 27em;
+    }
+  }
+
+  @media (min-width: 1800px) {
+    #dashboardTbl {
+      max-height: 31em;
+    }
+  }
+
+  .table-responsive::-webkit-scrollbar {
+    width: 10px;
+    margin-left: -10px;
+    -webkit-appearance: none;
+  }
+
+  .table-responsive::-webkit-scrollbar-track {
+    background-color: white;
+    border-right: 1px solid #f2f2f2;
+    border-left: 1px solid #f2f2f2;
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: #e6e6e6;
+    background-clip: content-box;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px 2px;
+  }
+
+  .card {
+    margin-bottom: 5px;
+  }
+
+  .card-body-filter {
+    background-color: #ecf0f5;
+  }
+
+  .card-header {
+    text-align: center;
+    padding-top: .5em !important;
+    padding-bottom: .5em !important;
+  }
+
+  .card-headerfilter {
+    text-align: center;
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+    font-size: 12px;
+    font-weight: bold;
+    /*background-color: white;*/
+    /* border: none; */
+  }
+
+  .modal-lg {
+    max-width: 91% !important;
+  }
+
+
+
+  .red {
+    font-weight: bold;
+    background-color: red !important;
+  }
+
+  /*5*/
+
+  .lightgreen {
+    font-weight: bold;
+    background-color: rgb(109, 236, 109) !important;
+  }
+
+  /*1*/
+
+  .yellow {
+    font-weight: bold;
+    background-color: yellow !important;
+  }
+
+  /*3*/
+
+  .amber {
+    font-weight: bold;
+    background-color: #FFC200 !important;
+  }
+
+  /*4*/
+
+  .green {
+    font-weight: bold;
+    background-color: green !important;
+  }
+
+  /*2*/
+
+  .normal {
+    color: 0;
+    background-color: greenyellow !important;
+  }
+
+  .modal-td {
+    max-width: 70% !important;
+    font-size: 11px !important;
+  }
+
+  .modal-at {
+    max-width: 72% !important;
+  }
+
+  .form-control {
+    font-size: 11px !important;
+  }
+
+  .table tr:hover td {
+    background-color: lightgray;
+  }
+
+  .active {
+    /*background: lightgray;*/
+    background: #3090C7;
+    color: #fff;
+  }
+
+  .active a {
+    color: cyan;
+  }
+
+  .active:hover td:not(:first-child) {
+    background-color: transparent !important;
+
+  }
+
+
+
+  .dropdown-item {
+    padding: 0px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .dropdown-menu {
+    padding: 4px 4px;
+    min-width: 6rem;
+  }
+</style>
+<div class="animated fadeIn">
+  <div class="card" style="background-color:#87cefa;">
+    <div class="card-body" style="padding: 5px 5px 0px 5px;">
+      <div class="row">
+        <div class="col-md-3" style="padding-right: 5px;">
+          <div class="card">
+            <div class="card-header card-headerfilter">
+              Settlement Location
+            </div>
+            <div class="card-body" style="padding: 5px;">
+              <table border="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td *ngFor="let setLocation of filterAndSideLinkData.settlementLocation  | slice:0:3; let i = index">
+                      <label>
+                        <input class="minimal" [(ngModel)]="setLocation.checked" (ngModelChange)="onSelectFilter(setLocation)" type="checkbox" [value]="setLocation.value">
+                        <!-- <span class="label-text" [ngClass]="setLocation.name == 'Clear Stream' ? 'stClearStream' : setLocation.name == 'DTC' ? 'stDTC' : setLocation.name == 'FED' ? 'stFED' : false">{{setLocation.name}}</span> -->
+                        <span class="label-text">{{setLocation.name}}</span>
+                      </label>
+                    </td>
+                    <!--<input class="minimal" [(ngModel)]="setLocation.checked" (ngModelChange)="onSelectFilter(setLocation)" type="checkbox" [value]="setLocation.value">{{setLocation.name}} -->
+                  </tr>
+                  <tr>
+                    <td *ngFor="let setLocation of filterAndSideLinkData.settlementLocation | slice:3:6; let i = index">
+                      <label>
+                        <input class="minimal" [(ngModel)]="setLocation.checked" (ngModelChange)="onSelectFilter(setLocation)" type="checkbox" [value]="setLocation.value">
+                        <!-- <span class="label-text" [ngClass]="setLocation.name == 'Global' ? 'stGLOBAL' : setLocation.name == 'MF-OFF' ? 'stMFOFF' : setLocation.name == 'MF-DOM' ? 'stMFDOM' : false">{{setLocation.name}}</span> -->
+                        <span class="label-text">{{setLocation.name}}</span>
+                      </label>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="padding-left: 0px;padding-right: 5px;">
+          <div class="card">
+            <div class="card-header card-headerfilter">
+              Status
+            </div>
+            <div class="card-body" style="padding: 5px;">
+              <table border="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td *ngFor="let tradeStatus of filterAndSideLinkData.TradeStatus | slice:0:2 let i = index">
+
+                      <label>
+                        <input class="minimal" [(ngModel)]="tradeStatus.checked" (ngModelChange)="onSelectFilter(tradeStatus)" type="checkbox" [value]="tradeStatus.value">
+                        <!-- <span class="label-text" [ngClass]="tradeStatus.name == 'Failed' ? 'statusFail' : tradeStatus.name == 'Pending' ? 'statusPending' : false">{{tradeStatus.name}}</span> -->
+                        <span class="label-text">{{tradeStatus.name}}</span>
+                      </label>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td *ngFor="let tradeStatus of filterAndSideLinkData.TradeStatus | slice:2:3 let i = index">
+                      <label>
+                        <input class="minimal" [(ngModel)]="tradeStatus.checked" (ngModelChange)="onSelectFilter(tradeStatus)" type="checkbox" [value]="tradeStatus.value">
+                        <!-- <span class="label-text" [ngClass]="tradeStatus.name == 'Incomplete' ? 'stIncomplete' : false">{{tradeStatus.name}}</span> -->
+                        <span class="label-text">{{tradeStatus.name}}</span>
+                      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3" style="padding-left: 0px; padding-right: 5px;">
+          <div class="card">
+            <div class="card-header card-headerfilter">
+              Type of Trade
+            </div>
+            <div class="card-body" style="padding: 5px;">
+              <table border="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td *ngFor="let TradeType of filterAndSideLinkData.TradeType | slice:0:2 let i = index">
+                      <label>
+                        <input class="minimal" [(ngModel)]="TradeType.checked" (ngModelChange)="onSelectFilter(TradeType)" type="checkbox" [value]="TradeType.value">
+                        <!-- <span class="label-text" [ngClass]="TradeType.name == 'Sell' ? 'totSell' : TradeType.name == 'BUY' ? 'totbuy' : false">{{TradeType.name}}</span> -->
+                        <span class="label-text">{{TradeType.name}}</span>
+                      </label>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td *ngFor="let TradeType of filterAndSideLinkData.TradeType | slice:2:4 let i = index">
+                      <label>
+                        <input class="minimal" [(ngModel)]="TradeType.checked" (ngModelChange)="onSelectFilter(TradeType)" type="checkbox" [value]="TradeType.value">
+                        <!-- <span class="label-text" [ngClass]="TradeType.name == 'Receive Free' ? 'totReceiveFree' : TradeType.name == 'Deliver Free' ? 'totDeliveredFree' : false">{{TradeType.name}}</span> -->
+                        <span class="label-text">{{TradeType.name}}</span>
+                      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3" style="padding-left: 0px; padding-right: 5px;">
+          <div class="card">
+            <div class="card-header card-headerfilter">
+              Risk
+            </div>
+            <div class="card-body" style="padding: 5px;">
+              <table border="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td style="width:35%" *ngFor="let RiskType of filterAndSideLinkData.RiskType | slice:0:3 let i = index">
+                      <label>
+                        <input class="minimal" [(ngModel)]="RiskType.checked" (ngModelChange)="onSelectFilter(RiskType)" type="checkbox" [value]="RiskType.value">
+                        <!-- <span class="label-text" [ngClass]="RiskType.name == 'NO' ? 'riskNo' : RiskType.name == 'LOW' ? 'riskLow' : RiskType.name == 'MEDIUM' ? 'riskMed' : false">{{RiskType.name}}</span> -->
+                        <span class="label-text">{{RiskType.name}}</span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <!-- <td *ngFor="let RiskType of filterAndSideLinkData.RiskType | slice:3:5 let i = index">
+                        <label>
+                          <input class="minimal" [(ngModel)]="RiskType.checked" (ngModelChange)="onSelectFilter(RiskType)" type="checkbox" [value]="RiskType.value">
+                          <span class="label-text">{{RiskType.name}}</span>
+                        </label>
+                      </td> -->
+                    <td>
+                      &nbsp;
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1" style="padding-left: 0px; ">
+          <div class="card" style="border:0; background-color:#87cefa;">
+            <div class="card-body" style="padding:0px; padding-top:0%">
+              <input type="Button" class="btn-primary" (click)="ClickbtnReload()" style="font-family:'FontAwesome';text-transform: capitalize;margin:0px; width:100%;height: 30px;font-size:13px"
+                aria-expanded="true" value="Refresh Data" size="12" id="btnRefreshAll">
+              <input type="Button" class="btn-primary" (click)="ClickbtnReset()" style="font-family: 'FontAwesome';text-transform: capitalize;margin-top:10px; width:100%;height: 30px;font-size:13px"
+                aria-expanded="true" value="Clear All" size="12" id="btnClearAll">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body" style="padding:5px;">
+
+      <div>
+        <!--Sameer Ahmed-->
+        <div [ngClass]="(detailTbl === 1 ) ? 'row': ''">
+          <div [ngClass]="(detailTbl === 1 ) ? 'col-md-4': 'col-md-12'">
+            <div [ngClass]="(detailTbl === 0 ) ? 'row ': ''">
+              <div [ngClass]="(detailTbl === 1 ) ? 'row': 'col-md-6'">
+                <div class="col-md-12" [ngStyle]="{'padding' : (detailTbl === 0 ) ? '0px': ''}">
+                  <div class="row">
+                    <div class='col-md-6' style="padding-right: 5px; " [ngStyle]="{'padding-left' : (detailTbl === 0 ) ? '0px': ''}">
+                      <div class="card" [ngStyle]="{'margin-bottom' : (detailTbl === 1 ) ? '4px': ''}">
+                        <div class="card-header" style="font-size:10px ; font-weight:600">
+                          Distribution by Status & RQ Rating
+                          <!--  Risk Rating Wise-->
+                          <div class="btn-group" dropdown style="position: absolute; top:2px; right: 2px">
+                            <button dropdownToggle type="button" class="">
+                              <i class="fa fa-bars" aria-hidden="true"></i>
+                              <span class="caret"></span>
+                            </button>
+                            <ul *dropdownMenu class="dropdown-menu" role="menu">
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('stackedbar','PNG')">Save as PNG</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('stackedbar','JPG')">Save as JPEG</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('stackedbar','PDF')">Save as PDF</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('stackedbar','print')">Print..</button>
+                              </li>
+                            </ul>
+                          </div>
+
+                        </div>
+                        <div class="card-body" [ngStyle]="{'padding' : (detailTbl === 1 ) ? '2px': '5px'}">
+                          <a *ngIf="drillLevelChart1 > 0" href="javascript:void(0);" style="right:2px; top:22px; position:absolute;" id="reDrawButton"
+                            (click)="Chart1_backBtn_click()" class="view">Back</a>
+                          <stackedBarChart *ngIf="stackType.length >0 && graph1 == 1" (chartClickEvent)="chartClicked($event)" (chartHoverEvent)="chartHover($event)"
+                            [id]="chart1ID" [data]="stackedData" [stackType]="stackType" [viewType]="this.detailTbl" id="stackedbar"></stackedBarChart>
+                        </div>
+                      </div>
+                    </div>
+                    <!--/.col-->
+                    <div class='col-md-6' style="padding-left: 0px; padding-right:5px;">
+                      <div class="card" [ngStyle]="{'margin-bottom' : (detailTbl === 1 ) ? '4px': ''}">
+                        <div class="card-header" style="font-size:10px; font-weight:600">
+                          Distribution by Location
+                          <div class="btn-group" dropdown style="position: absolute; top:2px; right: 2px">
+                            <button dropdownToggle type="button" class="">
+                              <i class="fa fa-bars" aria-hidden="true"></i>
+                              <span class="caret"></span>
+                            </button>
+                            <ul *dropdownMenu class="dropdown-menu" role="menu">
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('drillDown','PNG')">Save as PNG</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('drillDown','JPG')">Save as JPEG</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('drillDown','PDF')">Save as PDF</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('drillDown','print')">Print..</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="card-body" [ngStyle]="{'padding' : (detailTbl === 1 ) ? '0px': '5px'}">
+                          <!--<button id="reDrawButton" style="float:right">Back</button>-->
+                          <!-- <span class="badge badge-default" style="position:absolute; left:2px;" id="lblDrillValue"></span> -->
+                          <a *ngIf="drillLevelLocation>0" href="javascript:void(0);" style="right:2px; top:22px; position:absolute;" id="reDrawButton"
+                            (click)="redrawNgButton()" class="view">Back</a>
+                          <PieChart id="drillDown" *ngIf="chart2Data.length>0 && graph2 == 1" [isDonut]=f alse (chartClickEvent)="chartClicked($event)"
+                            [drillDetail]="chart2DrillDetails" [data]="chart2Data" [id]="chart2ID" [viewType]="this.detailTbl"></PieChart>
+                        </div>
+                      </div>
+                    </div>
+                    <!--/.col-->
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="row"> -->
+              <div [ngClass]="(detailTbl === 1 ) ? 'row': 'col-md-6'">
+                <div class="col-md-12" [ngStyle]="{'padding' : (detailTbl === 0 ) ? '0px': ''}">
+                  <div class="row">
+                    <div class='col-md-6' style="padding-right: 5px;" [ngStyle]="{'padding-left' : (detailTbl === 1 ) ? '': '0px'}">
+                      <div class="card">
+                        <div class="card-header" style="font-size:10px; font-weight:600">
+                          Distribution by Trade Type
+                          <div class="btn-group" dropdown style="position: absolute; top:2px; right: 2px">
+                            <button dropdownToggle type="button" class="">
+                              <i class="fa fa-bars" aria-hidden="true"></i>
+                              <span class="caret"></span>
+                            </button>
+                            <ul *dropdownMenu class="dropdown-menu" role="menu">
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('donutTradeType','PNG')">Save as PNG</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('donutTradeType','JPG')">Save as JPEG</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('donutTradeType','PDF')">Save as PDF</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('donutTradeType','print')">Print..</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="card-body" [ngStyle]="{'padding' : (detailTbl === 1 ) ? '2px': '5px'}">
+                          <!-- <donutChart *ngIf="donutTradeType.length>0 && graph3 == 1" [data]="donutTradeType" [id]="chart3ID" (chartHoverEvent) = "chartHover($event)" (chartClickEvent) = "chartClicked($event)"></donutChart> -->
+                          <!-- <pieDrillDown id="donutTradeType" *ngIf="donutTradeType.length>0 && graph3 == 1" [isDonut]= true (chartClickEvent) = "chartClicked($event)" [data]="donutTradeType" [id]="chart3ID"></pieDrillDown> -->
+                          <a *ngIf="drillLevelTradeType>0" href="javascript:void(0);" style="right:2px; top:22px; position:absolute;" (click)="redrawNgButtonTradeType()"
+                            class="view">Back</a>
+                          <PieChart id="donutTradeType" *ngIf="chart3Data.length>0 && graph3 == 1" [isDonut]=t rue (chartClickEvent)="chartClicked($event)"
+                            [drillDetail]="chart3DrillDetails" [data]="chart3Data" [id]="chart3ID" [viewType]="this.detailTbl"></PieChart>
+                        </div>
+                      </div>
+                    </div>
+                    <!--/.col-->
+                    <div class='col-md-6' style="padding-left: 0px;" [ngStyle]="{'padding-right' : (detailTbl === 1 ) ? '5px': '0px'}">
+                      <div class="card">
+                        <div class="card-header" style="font-size:10px; font-weight:600">
+                          Failed Trade Distribution by Age
+                          <div class="btn-group" dropdown style="position: absolute; top:2px; right: 2px">
+                            <button dropdownToggle type="button" class="">
+                              <i class="fa fa-bars" aria-hidden="true"></i>
+                              <span class="caret"></span>
+                            </button>
+                            <ul *dropdownMenu class="dropdown-menu" role="menu">
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('donutDistByAge','PNG')">Save as PNG</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('donutDistByAge','JPG')">Save as JPEG</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('donutDistByAge','PDF')">Save as PDF</button>
+                              </li>
+                              <li role="menuitem">
+                                <button class="dropdown-item" (click)="chartOptions('donutDistByAge','print')">Print..</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="card-body" [ngStyle]="{'padding' : (detailTbl === 1 ) ? '2px': '5px'}">
+                          <!-- <donutChart *ngIf="donutDistByAge.length>0 && graph4 == 1" [data]="donutDistByAge" [id]="chart4ID" (chartHoverEvent) = "chartHover($event)" (chartClickEvent) = "chartClicked($event)"></donutChart> -->
+                          <!-- <pieDrillDown id="donutDistByAge" *ngIf="donutDistByAge.length>0 && graph4 == 1" [isDonut]= true (chartClickEvent) = "chartClicked($event)" [data]="donutDistByAge" [id]="chart4ID"></pieDrillDown> -->
+                          <a *ngIf="drillLevelAge>0" href="javascript:void(0);" style="right:2px; top:22px; position:absolute;" id="reDrawButtonAgeType"
+                            (click)="reDrawButtonAgeTypeclick()" class="view">Back</a>
+                          <PieChart id="donutDistByAge" *ngIf="donutDistByAge.length>0 && graph4 == 1" [isDonut]=t rue (chartClickEvent)="chartClicked($event)"
+                            [drillDetail]="chart4DrillDetails" [data]="donutDistByAge" [id]="chart4ID" [viewType]="this.detailTbl"></PieChart>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!--/.col-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div [ngClass]="(detailTbl === 1 ) ? 'col-md-8': 'col-md-12'" style="padding-left: 0px;" [ngStyle]="{'padding-right' : (detailTbl === 0 ) ? '0px': ''}">
+            <div class="card">
+              <div class="card-body table-responsive" id="dashboardTbl" style="overflow:auto; padding: 0px;">
+                <table *ngIf="summeryTbl == 1" class="table table-sm dataTable">
+                  <thead>
+                    <tr>
+                      <th title="Settlement Location" (click)="sort('DASHBOARD_LOCATION')" [ngClass]="{'sorting': column != 'DASHBOARD_LOCATION', 'sorting_asc': (column == 'DASHBOARD_LOCATION' && isDesc), 'sorting_desc': (column == 'DASHBOARD_LOCATION' && !isDesc) }">Settlement Location</th>
+                      <th title="Trade Status" (click)="sort('DASHBOARD_STATUS')" [ngClass]="{'sorting': column != 'DASHBOARD_STATUS', 'sorting_asc': (column == 'DASHBOARD_STATUS' && isDesc), 'sorting_desc': (column == 'DASHBOARD_STATUS' && !isDesc) }">Trade Status</th>
+                      <th title="Trade Type " (click)="sort('DASHBOARD_TRADE_TYPE')" [ngClass]="{'sorting': column != 'DASHBOARD_TRADE_TYPE', 'sorting_asc': (column == 'DASHBOARD_TRADE_TYPE' && isDesc), 'sorting_desc': (column == 'DASHBOARD_TRADE_TYPE' && !isDesc) }">Trade Type</th>
+                      <th title="Number Of Trades" style="text-align:right;" (click)="sort('NO_OF_TRADES')" [ngClass]="{'sorting': column != 'NO_OF_TRADES', 'sorting_asc': (column == 'NO_OF_TRADES' && isDesc), 'sorting_desc': (column == 'NO_OF_TRADES' && !isDesc) }"># Of Trades</th>
+                      <th title="Net (USD)" style="text-align:right;" (click)="sort('NET_USD')" [ngClass]="{'sorting': column != 'NET_USD', 'sorting_asc': (column == 'NET_USD' && isDesc), 'sorting_desc': (column == 'NET_USD' && !isDesc) }">Net (USD)</th>
+                      <th title="Total Shares" style="text-align:right;" (click)="sort('TOTAL_SHARES')" [ngClass]="{'sorting': column != 'TOTAL_SHARES', 'sorting_asc': (column == 'TOTAL_SHARES' && isDesc), 'sorting_desc': (column == 'TOTAL_SHARES' && !isDesc) }">Total Shares</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr *ngFor="let rec of dashBoardData | orderBy: {property: column, direction: direction}">
+                      <td>{{rec.DASHBOARD_LOCATION}}</td>
+                      <td *ngIf="rec.DASHBOARD_STATUS == 'Incomplete' && (rec.DASHBOARD_LOCATION == 'DTC' || rec.DASHBOARD_LOCATION == 'FED'); else elseSourceBlock">{{rec.DASHBOARD_STATUS}}({{rec.SOURCE}})</td>
+                      <ng-template #elseSourceBlock>
+                        <td>{{rec.DASHBOARD_STATUS}}</td>
+                      </ng-template>
+                      <td>{{rec.DASHBOARD_TRADE_TYPE}}</td>
+                      <td style="text-align:right;">
+                        <a *ngIf="rec.DASHBOARD_STATUS == 'Failed'; else elseAgeBlock" href="javascript:void(0)" (click)="loadPopupData(rec);largeModal.show();"
+                          [popover]="popTemplate" popoverPlacement="left" [popoverOnHover]="true" (mouseover)='over(rec)' class="view">{{rec.NO_OF_TRADES}}</a>
+                        <popover-content #popTemplate>
+                          <table class="table-bordered" style="margin:5px;">
+                            <thead>
+                              <tr>
+                                <th *ngIf="rec.DASHBOARD_LOCATION == 'Global'">
+                                  <0 Days</th>
+                                    <th>0-3 Days</th>
+                                    <th>4-7 Days</th>
+                                    <th> >7 Days</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr style="text-align:center;">
+                                <td *ngIf="rec.DASHBOARD_LOCATION == 'Global'" style="background:white;">
+                                  <a href="javascript:void(0)" (click)="loadPopupData(rec);largeModal.show();">{{AgeLt0Days}}</a>
+                                </td>
+                                <td style="background:white;">
+                                  <a href="javascript:void(0)" (click)="loadPopupData(rec);largeModal.show();">{{Age0_3Days}}</a>
+                                </td>
+                                <td style="background:white;">
+                                  <a href="#">{{Age4_7Days}}</a>
+                                </td>
+                                <td style="background:white;">
+                                  <a href="#">{{AgeGt7Days}}</a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </popover-content>
+                      </td>
+                      <ng-template #elseAgeBlock>
+                        <a href="javascript:void(0)" (click)="loadPopupData(rec);largeModal.show();" class="view">{{rec.NO_OF_TRADES}}</a>
+                      </ng-template>
+                      <td style="text-align:right;">{{rec.NET_USD | number }}</td>
+                      <td style="text-align:right;">{{rec.TOTAL_SHARES}}</td>
+                    </tr>
+                    <tr *ngIf="dashBoardData.length == 0" class="odd">
+                      <td valign="top" colspan="11" class="dataTables_empty">No data available in table</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="detailTbl == 1">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body table-responsive" style="padding: 5px; max-height:520px; overflow:auto;">
+                <table id="tbale2" style="width:100%" *ngIf="detailTbl == 1" datatable [dtOptions]="dtOptionsForTradeDetails" [dtTrigger]="dtTriggerTradeDetail"
+                  class="table hover table-sm">
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Sameer Ahmed-->
+
+
+    </div>
+  </div>
+</div>
+
+
+<div bsModal #largeModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a href="javascript:void(0)" (click)="xlsTrade()">
+          <img src="../assets/img/xls.png" style="width:35px; height:35px; position: absolute;right: 45px; top:10px;">
+        </a>
+        <h4 class="modal-title">Trade Information</h4>
+        <button type="button" class="close" (click)="largeModal.hide();hideDatatablePopOver()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="answer table-responsive" style="max-height: 450px; overflow-y: auto;">
+        <my-datatable (commentEvent)="updateCommentPop($event)" (someEvent)="loadPopupDetailsData($event,false,$event,$event);tdModal.show()"></my-datatable>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="largeModal.hide();hideDatatablePopOver()">Close</button>
+        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<div bsModal #tdModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-td" role="document">
+    <div class="modal-content">
+      <div *ngFor="let rec of tradeDetails">
+        <div class="modal-header">
+          <h5 class="modal-title">{{tradeDetails[0].uniqueTradeKey}} Trade Details</h5>
+          <button type="button" class="close" (click)="tdModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="">
+            <div class="form-group">
+              <div class="hideComment" *ngIf="rec.DASHBOARD_STATUS =='Failed'">
+                <label for="txtNots" id="txtNotsCount">Comments</label>
+                <div style="text-align: right;width: 80%;float: right;">
+                  <a class="" id="auditTrailBtn" data-toggle="modal" href="javascript:void(0)" (click)="loadAuditData();atModal.show();">Audit Trail</a>
+                </div>
+                <textarea id="txtNot" style="width: 100%;" maxlength="100" rows="4" class="form-control" value={{tradeDetails[0].COMMENTS}}
+                  cols="50" s></textarea>
+              </div>
+              <div style="float: left;">
+                <a href="javascript:void(0)" class="expand" (click)="toggleExpand();">Expand All</a> |
+                <a href="javascript:void(0)" class="collapse1" (click)="toggleCollapse();">Collapse All</a>
+              </div>
+              <div class="question" style="color:#003262;">
+                <br>
+                <h6 style="border: solid black; border-width: thin; padding:10px;background:#f1f1f1">
+                  <b>TRADE INFORMATION</b>
+                </h6>
+              </div>
+              <div class="collapse" [class.show]="show">
+
+                <div class="answer table-responsive" style="max-height: 350px; overflow-y: auto;">
+
+                  <div *ngFor="let rec of xlsDetailData">
+                    <div class="form-group unsubscribeAddpop hideComment" *ngFor="let key of rowDetailKeys">
+                      <label for="">
+                        {{key}}
+                        <span class="require"></span>
+                      </label>
+                      <input [readonly]="isReadOnly" type="text" class="form-control" placeholder="" value="{{rec[key]}}">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="tdModal.hide();">Close</button>
+          <button type="button" class="btn btn-secondary" (click)="tdModal.hide();updateComment(textarea.value,true,rec)">Save</button>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div bsModal #atModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-at" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a href="javascript:void(0)" (click)="auditTrailData($event)">
+          <img src="../assets/img/xls.png" style="width:35px; height:35px; position: absolute;right: 45px; top:10px;">
+        </a>
+        <h4 class="modal-title" id="auditTitle">Audit Trail</h4>
+        <button type="button" class="close" (click)="atModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="box">
+          <div class="box-body">
+            <!--datatable [dtOptions]="dtOptForAerialPopup" [dtTrigger]="adTrigger"-->
+            <table id="tbl4" class="table table-sm dataTable">
+              <thead>
+                <tr>
+                  <th (click)="sortAudit('COMMENT_BY')" [ngClass]="{'sorting': column1 != 'COMMENT_BY', 'sorting_asc': (column1 == 'COMMENT_BY' && isDesc1), 'sorting_desc': (column1 == 'COMMENT_BY' && !isDesc1) }">Updated By</th>
+                  <th (click)="sortAudit('DATE_TIME')" [ngClass]="{'sorting': column1 != 'DATE_TIME', 'sorting_asc': (column1 == 'DATE_TIME' && isDesc1), 'sorting_desc': (column1 == 'DATE_TIME' && !isDesc1) }">Update Date</th>
+                  <th (click)="sortAudit('COMMENTS')" [ngClass]="{'sorting': column1 != 'COMMENTS', 'sorting_asc': (column1 == 'COMMENTS' && isDesc1), 'sorting_desc': (column1 == 'COMMENTS' && !isDesc1) }">Comment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let rec of auditData | orderBy: {property: column1, direction: direction1}">
+                  <td>{{rec.COMMENT_BY}}</td>
+                  <td>{{rec.DATE_TIME}}</td>
+                  <td>{{rec.COMMENTS}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="atModal.hide()">Close</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
+<div id="addCommentPopOver" class="modal-content" style="width:350px; display:none; position:absolute;">
+  <div class="modal-header" style="padding: 5px;">
+    <h4 class="modal-title">Comments</h4>
+  </div>
+  <div class="modal-body" style="padding: 0px;">
+    <textarea id="commentTextArea" maxlength="100" ref-textarea style="width:100%" rows="5" #textArea></textarea>
+  </div>
+  <div class="modal-footer" style="padding: 0px;">
+    <button type="button" class="btn btn-link" (click)="textarea.value='';hideCommentPopUp()">Close</button>
+    <button type="button" class="btn btn-link" (click)="hideCommentPopUp();updateComment(textarea.value,false,rec);textarea.value='';">Save changes</button>
+  </div>
+</div>
+<!-- <div *ngIf="isLoder" class="loader"></div> -->
+<div class="my-container">
+  <ngx-loading [show]="isLoader"></ngx-loading>
+
+</div>
+<div id="myEmailPopover" class="modal-content" style="width:550px; padding:2px; display:none; position:absolute;">
+  <div class="modal-header" style="padding: 5px;">
+    <h4 class="modal-title">Email</h4>
+  </div>
+  <div class="modal-body" style="padding: 0px;">
+    <textarea [(ngModel)]="to" style="width:100%; padding:1px;" rows="1" placeholder="To:"></textarea>
+    <textarea [(ngModel)]="subject" style="width:100%; padding:1px;" rows="1" placeholder="Subject:"></textarea>
+    <textarea [(ngModel)]="message" style="width:100%; padding:1px;" rows="8" placeholder="Message"></textarea>
+  </div>
+  <div class="modal-footer" style="padding: 0px;">
+    <button type="button" class="btn btn-link" (click)="hideEmailPopUp();">Cancel</button>
+    <button type="button" class="btn btn-link" (click)="sendEmail(to,subject,message);">Send</button>
+  </div>
+</div>

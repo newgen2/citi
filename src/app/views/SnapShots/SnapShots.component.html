@@ -1,0 +1,72 @@
+<style>
+    .card-header{
+        font-weight: bold;
+        color:rgb(114, 114, 114);
+    }
+   .reportlinks{
+       padding-left: 10px;
+   } 
+</style>
+<div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+               Trade's Snapshot
+            </div>
+            <div class="card-body">
+                    <div><i class="fa fa-folder" aria-hidden="true" ></i><a href="javascript:void(0)"(click)="toggleRow1();" style="font-weight:600; color:rgb(114, 114, 114) !important"> Today's Snapshot</a>
+                        <div class="reportlinks" *ngIf="showRow1">
+                            <p  *ngFor = "let report of ReportSource" style="margin:0px !important">
+                                <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                                    <a href="javascript:void(0)" (click)="getData(report, 'TODAY')"> {{report.name}}</a>
+                                </i>
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div><i class="fa fa-folder" aria-hidden="true"></i><a href="javascript:void(0)"(click)="toggleRow2();" style="font-weight:600; color:rgb(114, 114, 114) !important"> This Week's Snapshot</a>
+                        <div class="reportlinks" *ngIf="showRow2">
+                                <p  *ngFor = "let report of ReportSource" style="margin:0px !important">
+                                        <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                                            <a href="javascript:void(0)" (click)="getData(report, 'THIS_WEEK')"> {{report.name}}</a>
+                                        </i>
+                                    </p>
+                                </div>
+                    </div>
+                
+                    <div><i class="fa fa-folder" aria-hidden="true"></i><a href="javascript:void(0)"(click)="toggleRow3();" style="font-weight:600; color:rgb(114, 114, 114) !important"> Last Week's</a>
+                        <div class="reportlinks" *ngIf="showRow3">
+                                <p  *ngFor = "let report of ReportSource" style="margin:0px !important">
+                                        <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                                            <a href="javascript:void(0)" (click)="getData(report, 'LAST_WEEK')"> {{report.name}}</a>
+                                        </i>
+                                    </p>
+                        </div>
+                    </div>
+                
+                    <div><i class="fa fa-folder" aria-hidden="true"></i><a href="javascript:void(0)"(click)="toggleRow4();" style="font-weight:600; color:rgb(114, 114, 114) !important"> This Month's</a> 
+                        <div class="reportlinks" *ngIf="showRow4">
+                        <p  *ngFor = "let report of ReportSource" style="margin:0px !important">
+                                <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                                    <a href="javascript:void(0)" (click)="getData(report, 'THIS_MONTH')"> {{report.name}}</a>
+                                </i>
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div><i class="fa fa-folder" aria-hidden="true"></i><a href="javascript:void(0)"(click)="toggleRow5();" style="font-weight:600; color:rgb(114, 114, 114) !important"> Past</a>
+                        <div class="reportlinks" *ngIf="showRow5">
+                            <div style="width:20%">
+                                <my-date-picker  name="mydate" [options]="myDatePickerOptions" [(ngModel)]="model" required></my-date-picker>
+                            </div>
+                            <p  *ngFor = "let report of ReportSource" style="margin:0px !important">
+                                    <i class="fa fa-arrow-circle-right" aria-hidden="true">
+                                        <a href="javascript:void(0)" (click)="getData(report, 'past')"> {{report.name}}</a>
+                                    </i>
+                                </p>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            </div>
+            </div>

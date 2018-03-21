@@ -1,0 +1,33 @@
+<style>.app-header {background-image: linear-gradient(to bottom, #00bdf2, #00b3f0 20%, #0066b3 75%, #004785 ) !important;} .app-header.navbar, .navbar-brand {border-bottom: none;}</style>
+<header class="app-header navbar">
+    <button class="navbar-toggler d-lg-none" type="button" appMobileSidebarToggler>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <button class="navbar-toggler d-md-down-none" type="button" appSidebarToggler>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  <ul class="nav navbar-nav d-md-down-none">
+    <li class="nav-item px-3" style="font-weight:bold; padding: 0px !important;">
+      <span style="color:white; font-size: 18px; font-family: Arial;">CO-PAD</span>
+      <span style="color:black; font-size: 12px; font-family: Arial;">(CPB Operations - Process Automation Dashboard)</span>
+    </li>
+  </ul>
+  
+  <ul class="nav navbar-nav ml-auto" style="margin-right:15% !important">
+    <li class="nav-item px-3">
+      <h3 style="font-size: 20px; color:white;" >{{headerTitle}}</h3>
+    </li>
+  </ul>
+  
+  <ul class="nav navbar-nav ml-auto">
+  <a class="navbar-brand" href="#" style="background-color:0; margin-bottom: 19px; border-bottom:none;"></a>
+  
+    <li class="nav-item d-md-down-none" style="padding-right:10px">
+      <!--<a class="nav-link" href="#">LOGOUT</a>-->
+      <a style="color:white;" href="../PCPFDS/pcplogout.jsp">LOGOUT</a>
+      
+    </li>
+   </ul>
+  <span class="logo-lg" style="position: absolute;font-size: 11px;right: 5px;top: 52px; color:white;">{{loggedinTime}} | {{currentUser}}  ({{soeid}})</span>
+  
+</header>
